@@ -11,6 +11,7 @@ var config = {
   function signUp(email, password) {
     firebase.auth().createUserWithEmailAndPassword(email, password).then(function (){
         console.log("oi");
+        // window.location = 'timeline.html'
     })
     .catch(function(error) {
          var errorCode = error.code;
@@ -20,7 +21,7 @@ var config = {
         //  } else {
         //    alert(errorMessage);
         //  }
-         console.log(error);
+         console.log(errorCode, errorMessage);
     });
 
   }
