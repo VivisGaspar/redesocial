@@ -8,3 +8,14 @@ $(document).ready(function getEmailAndPassword(){
         signUp(email, password, name);
     })
 })
+
+$(document).ready(function getInfoLogin(){
+    $('#btn-sign-in').click(function (event){
+        event.preventDefault()
+        const emailSignIn = $('#email-sign-in').val();
+        const passwordSignIn = $('#password-sign-in').val();
+        signIn(emailSignIn, passwordSignIn);
+    })
+    
+    
+})
