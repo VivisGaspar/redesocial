@@ -16,6 +16,16 @@ $(document).ready(function getInfoLogin(){
         const passwordSignIn = $('#password-sign-in').val();
         signIn(emailSignIn, passwordSignIn);
     })
-    
-    
 })
+
+$(document).ready(function initTimeline() {
+    
+});
+
+function addPosts() {
+
+}
+
+function printPosts() {
+    
+}
