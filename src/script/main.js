@@ -1,31 +1,51 @@
+$(document).ready(function () {
+    getSignUpInfo();
+    getSignInInfo();
+    initTimeline();
+    $('#post-btn').click(getPostInput);
+});
 
-$(document).ready(function getEmailAndPassword(){
-    $('#btn-sign-up').click(function (event){
+function getSignUpInfo() {
+    $('#btn-sign-up').click(function (event) {
         event.preventDefault()
         const email = $('#email').val();
         const password = $('#password').val();
         const name = $('#name').val();
         signUp(email, password, name);
     })
-})
+}
 
-$(document).ready(function getInfoLogin(){
-    $('#btn-sign-in').click(function (event){
+function getSignInInfo() {
+    $('#btn-sign-in').click(function (event) {
         event.preventDefault()
         const emailSignIn = $('#email-sign-in').val();
         const passwordSignIn = $('#password-sign-in').val();
         signIn(emailSignIn, passwordSignIn);
     })
-})
+}
 
-$(document).ready(function initTimeline() {
-    
-});
-
-function addPosts() {
+function initTimeline() {
 
 }
 
+function getPostInput(event) {
+    event.preventDefault();
+    let postInput = $('#post-input').val();
+   if(postInput) {
+       addPosts(postInput);
+       addPostsToDB(postInput);
+   } else {
+       alert("complete");
+   }
+   $("#post-input").val("");
+}
+
+function addPosts(postInput) {
+$('#post-list').append(`
+<li>${postInput}</li>
+`)
+}
+
 function printPosts() {
-    
+
 }
