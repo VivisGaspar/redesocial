@@ -42,10 +42,14 @@ function getPostInput(event) {
 
 function addPosts(postInput) {
 $('#post-list').append(`
-<li>${postInput}</li>
-`)
+<li>${postInput}</li>`
+);
 }
 
-function printPosts() {
-
+function printPosts(text, key) {
+    console.log(text);
+    
+    $("#post-list").append(`
+    <li>${text}</li>`
+  );
 }
