@@ -10,7 +10,7 @@ function signUp(email, password) {
         email: email
       });
       console.log(response)
-      window.location = 'timeline.html?id=' + userId;
+      window.location = 'timeline.html?userId=' + userId;
     })
     .catch(function (error) {
       var errorCode = error.code;
@@ -29,7 +29,7 @@ function signIn(emailSignIn, passwordSignIn) {
     .then(function (response) {
       console.log("logado");
       const userId = response.user.uid
-      window.location = 'timeline.html?id=' + userId;
+      window.location = 'timeline.html?userId=' + userId;
     })
     .catch(function (error) {
       var errorCode = error.code;
