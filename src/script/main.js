@@ -1,7 +1,6 @@
 $(document).ready(function () {
     getSignUpInfo();
     getSignInInfo();
-    initTimeline();
     $('#post-btn').click(getPostInput);
 });
 
@@ -24,32 +23,49 @@ function getSignInInfo() {
     })
 }
 
-function initTimeline() {
-
-}
-
 function getPostInput(event) {
     event.preventDefault();
     let postInput = $('#post-input').val();
-   if(postInput) {
-       addPosts(postInput);
-       addPostsToDB(postInput);
-   } else {
-       alert("complete");
-   }
-   $("#post-input").val("");
+    if (postInput) {
+        addPosts(postInput);
+        addPostsToDB(postInput);
+    } else {
+        alert("complete");
+    }
+    $("#post-input").val("");
 }
 
 function addPosts(postInput) {
-$('#post-list').append(`
-<li>${postInput}</li>`
-);
+    $('#post-list').append(`
+<div>
+    <select>
+        <option value="editar">Editar</option>
+        <option value="excluir">Excluir</option>
+    <select/>
+    <p>${postInput}</p>
+</div>`
+    );
 }
 
 function printPosts(text, key) {
     console.log(text);
-    
+
     $("#post-list").append(`
-    <li>${text}</li>`
-  );
+<div>
+    <select id='post-select'>
+        <option value="editar">Editar</option>
+        <option value="excluir" data-id=${key}>Excluir</option>
+    <select/>
+    <p>${text}</p>
+</div>`
+    );
+
+    $(`#post-select`).change(function () {
+        let value = $(this).val();
+        if (value === "excluir") {
+            if (confirm('quer excluir')) {
+                console.log('user quer excluir');
+            }
+        }
+    })
 }
