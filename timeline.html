@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <title>Educalab</title>
     <link rel="stylesheet" href="src/style.css" />
 </head>
+
 <body>
     <form>
         <input id="post-input" type="text" placeholder="Qual tema você quer falar hoje?">
@@ -14,13 +16,49 @@
     </form>
     <section id="post-list"></section>
 
+
+
+    <div id="clickme" class="wrap-menu">
+        <div class="dots">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+
+        <div id="book" class="options">
+            <ul>
+                <li id="edit">Editar</li>
+                <li id="del">Deletar</li>
+            </ul>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <script src="http://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-database.js"></script>
     <script src="src/script/config.js"></script>
     <script src="src/script/main.js"></script>
-    <script src="src/script/auth.js"></script>  
-    <script src="src/script/timeline.js"></script>   
+    <script src="src/script/auth.js"></script>
+    <script src="src/script/timeline.js"></script>
 </body>
+
 </html>

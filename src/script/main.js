@@ -69,3 +69,19 @@ function printPosts(text, key) {
         }
     })
 }
+
+
+$("#book").hide()
+$("#clickme").click(function () {
+  $("#book").toggle("display")
+});
+
+$("#edit").click(function(){
+  alert('Editar post');
+
+});
+
+$("#del").click(function(){
+  alert('Deletar post');
+
+});
