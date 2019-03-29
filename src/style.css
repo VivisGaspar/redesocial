@@ -1,0 +1,106 @@
+body {
+  font-family: "Segoe UI","Helvetica Neue","Noto Sans","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"
+}  
+  li {
+    list-style-type:none;
+  }
+  
+  li:hover{
+    background-color:#76BED0;
+    color:#fff;
+    cursor:pointer;
+    
+  }
+  
+  ul {
+    display:flex;
+    flex-direction:column;
+  }
+  
+  .options, .form-sign-up, .form-sign-in  {
+    border-width: 1px;
+    border-style: solid;
+    border-color:#C0CCDA;
+    border-radius:2px;
+    margin: 0px;
+    width: 25%;
+    background-color:#FFFFFF;
+  }
+  
+  .dot {
+    width: 5px;
+    height: 5px;
+    margin: 3px;
+    background: #C0CCDA;
+    border-radius: 50%;
+    display: block;
+  }
+  
+  .wrap-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+  }
+  
+  .dots:hover .dot{
+    background-color:#76BED0;
+  }
+  
+   .dots {
+      width: 60px;
+      height: 60px;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+
+
+  .descript-home {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    text-align: right;
+    height: 90vh;
+    background: url(assets/img/home-bg.jpg) no-repeat center center;
+    background-size: contain;
+    background-attachment: fixed;
+    font-size: 25px;
+    background-position: left;
+    background-size: cover;
+  }
+
+  .box {
+    padding:20px;
+  }
+
+  .logo {
+  max-width:230px;
+  max-height:95px;
+  width: auto;
+  height: auto;
+  }
+
+  .btn-outline-success {
+    background-color: #47525E;
+    color: #FFFFFF;
+    border: #47525E solid 2px;
+  }
+
+  .btn-secondary {
+    margin: 5px;
+  }
+
+  /* Sign Up / Sign In*/
+
+  .form-sign-up, .form-sign-in {
+    width: 55%;
+    padding: 5px;
+  }
+
+  /* TimeLine */

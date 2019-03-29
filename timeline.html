@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,20 +8,22 @@
     <title>Educalab</title>
     <link rel="stylesheet" href="src/style.css" />
 </head>
+
 <body>
+    <h1>Time Line</h1>
     <form>
-        <input id="post-input" type="text" placeholder="Qual tema você quer falar hoje?">
+        <textarea id="post-input" class="post-area" type="text" placeholder="Qual tema você quer falar hoje?"></textarea>
         <button id="post-btn">Postar</button>
     </form>
     <section id="post-list"></section>
-
     <script src="http://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-database.js"></script>
     <script src="src/script/config.js"></script>
     <script src="src/script/main.js"></script>
-    <script src="src/script/auth.js"></script>  
-    <script src="src/script/timeline.js"></script>   
+    <script src="src/script/auth.js"></script>
+    <script src="src/script/timeline.js"></script>
 </body>
+
 </html>

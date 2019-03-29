@@ -2,7 +2,22 @@ $(document).ready(function () {
     getSignUpInfo();
     getSignInInfo();
     $('#post-btn').click(getPostInput);
+    $('#home-btn-sign-in').click(goSignIn);
+    $('#home-btn-sign-up').click(goSignUp);
+    
 });
+
+function goSignIn(event){
+    event.preventDefault()
+    window.location = 'signIn.html'
+}
+
+function goSignUp(event){
+    event.preventDefault()
+    window.location = 'signUp.html'
+}
+
+
 
 function getSignUpInfo() {
     $('#btn-sign-up').click(function (event) {
@@ -42,6 +57,21 @@ function printPosts(text, key) {
 
     $("#post-list").append(`
 <div>
+<div id="clickme" class="wrap-menu">
+        <div class="dots">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+
+        <div id="book" class="options">
+            <ul>
+                <li id="edit">Editar</li>
+                <li id="del">Deletar</li>
+            </ul>
+        </div>
+    </div>
+
     <select id='post-select'>
         <option value="editar">Editar</option>
         <option value="excluir" data-id=${key}>Excluir</option>
@@ -59,3 +89,20 @@ function printPosts(text, key) {
         }
     })
 }
+
+
+
+$("#book").hide()
+$("#clickme").click(function () {
+    $("#book").toggle("display")
+});
+
+$("#edit").click(function () {
+    alert('Editar post');
+
+});
+
+$("#del").click(function () {
+    alert('Deletar post');
+
+});
