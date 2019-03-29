@@ -4,15 +4,14 @@ $(document).ready(function () {
     $('#post-btn').click(getPostInput);
     $('#home-btn-sign-in').click(goSignIn);
     $('#home-btn-sign-up').click(goSignUp);
-    
 });
 
-function goSignIn(event){
+function goSignIn(event) {
     event.preventDefault()
     window.location = 'signIn.html'
 }
 
-function goSignUp(event){
+function goSignUp(event) {
     event.preventDefault()
     window.location = 'signUp.html'
 }
@@ -53,7 +52,7 @@ function getPostInput(event) {
 }
 
 function printPosts(text, key) {
-    
+
 
     $("#post-list").append(`
 <div>
@@ -80,29 +79,38 @@ function printPosts(text, key) {
 </div>`
     );
 
-    $(`#post-select`).change(function () {
-        let value = $(this).val();
-        if (value === "excluir") {
-            if (confirm('quer excluir')) {
-                console.log('user quer excluir');
-            }
-        }
-    })
+    getChangeOp()
+
+    // $(`#post-select`).change(function () {
+    //     let value = $(this).val();
+    //     if (value === "excluir") {
+    //         if (confirm('quer excluir')) {
+    //             console.log('user quer excluir');
+    //         }
+    //     }
+    // })
 }
 
 
+function getChangeOp() {
+    console.log('entrou')
+    $("#book").hide()
+    $("#clickme").click(function () {
+        
+        $("#book").toggle("display")
+    });
 
-$("#book").hide()
-$("#clickme").click(function () {
-    $("#book").toggle("display")
-});
+    $("#edit").click(function () {
+        alert('Editar post');
 
-$("#edit").click(function () {
-    alert('Editar post');
+    });
 
-});
+    $("#del").click(function () {
+        alert('Deletar post');
 
-$("#del").click(function () {
-    alert('Deletar post');
+    });
 
-});
+
+}
+
+
