@@ -42,42 +42,18 @@ function getPostInput(event) {
     event.preventDefault();
     let postInput = $('#post-input').val();
     if (postInput) {
-        addPosts(postInput);
-        addPostsToDB(postInput);
+        let newPost = addPostsToDB(postInput);
+        let postId = newPost.getKey();
+        console.log(postId);
+        printPosts(postInput, postId);
     } else {
         alert("complete");
     }
     $("#post-input").val("");
 }
 
-function addPosts(postInput) {
-    $('#post-list').append(`
-<div>
-<div id="clickme" class="wrap-menu">
-        <div class="dots">
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-        </div>
-
-        <div id="book" class="options">
-            <ul>
-                <li id="edit">Editar</li>
-                <li id="del">Deletar</li>
-            </ul>
-        </div>
-    </div>
-    <select>
-        <option value="editar">Editar</option>
-        <option value="excluir">Excluir</option>
-    <select/>
-    <p>${postInput}</p>
-</div>`
-    );
-}
-
 function printPosts(text, key) {
-    console.log(text);
+    
 
     $("#post-list").append(`
 <div>

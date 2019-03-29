@@ -20,7 +20,6 @@ function getPostsFromDB() {
 function renderPosts(snapshot) {
     snapshot.forEach(function(childSnapshot) {
         let post = childSnapshot.val();
-        console.log(post);
         printPosts(post.text, childSnapshot.key);
       });
 }
