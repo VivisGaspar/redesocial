@@ -4,6 +4,7 @@ $(document).ready(function () {
     $('#post-btn').click(getPostInput);
 });
 
+
 function getSignUpInfo() {
     $('#btn-sign-up').click(function (event) {
         event.preventDefault()
@@ -38,6 +39,20 @@ function getPostInput(event) {
 function addPosts(postInput) {
     $('#post-list').append(`
 <div>
+<div id="clickme" class="wrap-menu">
+        <div class="dots">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+
+        <div id="book" class="options">
+            <ul>
+                <li id="edit">Editar</li>
+                <li id="del">Deletar</li>
+            </ul>
+        </div>
+    </div>
     <select>
         <option value="editar">Editar</option>
         <option value="excluir">Excluir</option>
@@ -52,6 +67,21 @@ function printPosts(text, key) {
 
     $("#post-list").append(`
 <div>
+<div id="clickme" class="wrap-menu">
+        <div class="dots">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+
+        <div id="book" class="options">
+            <ul>
+                <li id="edit">Editar</li>
+                <li id="del">Deletar</li>
+            </ul>
+        </div>
+    </div>
+
     <select id='post-select'>
         <option value="editar">Editar</option>
         <option value="excluir" data-id=${key}>Excluir</option>
@@ -71,17 +101,18 @@ function printPosts(text, key) {
 }
 
 
+
 $("#book").hide()
 $("#clickme").click(function () {
-  $("#book").toggle("display")
+    $("#book").toggle("display")
 });
 
-$("#edit").click(function(){
-  alert('Editar post');
+$("#edit").click(function () {
+    alert('Editar post');
 
 });
 
-$("#del").click(function(){
-  alert('Deletar post');
+$("#del").click(function () {
+    alert('Deletar post');
 
 });
