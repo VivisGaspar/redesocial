@@ -1,3 +1,6 @@
+body {
+  font-family: "Segoe UI","Helvetica Neue","Noto Sans","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"
+}  
   li {
     list-style-type:none;
   }
@@ -14,7 +17,7 @@
     flex-direction:column;
   }
   
-  .options {
+  .options, .form-sign-up, .form-sign-in  {
     border-width: 1px;
     border-style: solid;
     border-color:#C0CCDA;
@@ -92,3 +95,12 @@
   .btn-secondary {
     margin: 5px;
   }
+
+  /* Sign Up / Sign In*/
+
+  .form-sign-up, .form-sign-in {
+    width: 55%;
+    padding: 5px;
+  }
+
+  /* TimeLine */
