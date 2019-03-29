@@ -2,7 +2,21 @@ $(document).ready(function () {
     getSignUpInfo();
     getSignInInfo();
     $('#post-btn').click(getPostInput);
+    $('#home-btn-sign-in').click(goSignIn);
+    $('#home-btn-sign-up').click(goSignUp);
+    
 });
+
+function goSignIn(event){
+    event.preventDefault()
+    window.location = 'signIn.html'
+}
+
+function goSignUp(event){
+    event.preventDefault()
+    window.location = 'signUp.html'
+}
+
 
 
 function getSignUpInfo() {

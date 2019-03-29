@@ -83,7 +83,12 @@
   height: auto;
   }
 
- h2 {
-   
- }
-  
+  .btn-outline-success {
+    background-color: #47525E;
+    color: #FFFFFF;
+    border: #47525E solid 2px;
+  }
+
+  .btn-secondary {
+    margin: 5px;
+  }
