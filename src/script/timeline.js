@@ -32,3 +32,13 @@ function deletePostFromDB(key) {
     database.ref(`posts/${USER_ID}/${key}`).remove();
 }
 
+function editPost(postP, newText, key) {
+    $(postP).html(newText);
+    editPostFromDB(newText, key);
+}
+
+function editPostFromDB(newText, key) {
+    database.ref(`posts/${USER_ID}/${key}`).update({
+        text: newText
+    });
+}
