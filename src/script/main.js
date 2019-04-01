@@ -65,21 +65,23 @@ function printPosts(text, key) {
                     </ul>
                 </div>
             </div>    
-            <p>${text}</p>
+            <p id=text-${key}>${text}</p>
         </div>`
     );
 
-    getChangeOp(key);
+    getChangeOp(text, key);
 }
 
-function getChangeOp(key) {
+function getChangeOp(text, key) {
     $(`#options-${key}`).hide()
     $(`#div-${key}`).click(function () {
         $(`#options-${key}`).toggle("display")
     });
     $(`#edit-${key}`).click(function () {
         console.log(key);
-        alert('Editar post');
+        let newText = prompt(`Altere sua publicação: ${text}`);
+        let postP = $(`#text-${key}`);
+        editPost(postP, newText, key);
     });
     $(`#del-${key}`).click(function () {
         console.log(key);   
@@ -89,4 +91,6 @@ function getChangeOp(key) {
           }
     });
 }
+
+
 
