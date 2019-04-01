@@ -16,8 +16,6 @@ function goSignUp(event) {
     window.location = 'signUp.html'
 }
 
-
-
 function getSignUpInfo() {
     $('#btn-sign-up').click(function (event) {
         event.preventDefault()
@@ -52,65 +50,39 @@ function getPostInput(event) {
 }
 
 function printPosts(text, key) {
-
-
     $("#post-list").append(`
-<div>
-<div id="clickme" class="wrap-menu">
-        <div class="dots">
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-        </div>
-
-        <div id="book" class="options">
-            <ul>
-                <li id="edit">Editar</li>
-                <li id="del">Deletar</li>
-            </ul>
-        </div>
-    </div>
-
-    <select id='post-select'>
-        <option value="editar">Editar</option>
-        <option value="excluir" data-id=${key}>Excluir</option>
-    <select/>
-    <p>${text}</p>
-</div>`
+        <div>
+            <div id='div-${key}' class="wrap-menu">
+                <div class="dots">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+                <div id='options-${key}'>
+                    <ul>
+                        <li data-id=edit-${key}>Editar</li>
+                        <li data-id=del-${key}>Deletar</li>
+                    </ul>
+                </div>
+            </div>    
+            <p>${text}</p>
+        </div>`
     );
 
-    getChangeOp()
-
-    // $(`#post-select`).change(function () {
-    //     let value = $(this).val();
-    //     if (value === "excluir") {
-    //         if (confirm('quer excluir')) {
-    //             console.log('user quer excluir');
-    //         }
-    //     }
-    // })
+    getChangeOp(key);
 }
 
-
-function getChangeOp() {
-    console.log('entrou')
-    $("#book").hide()
-    $("#clickme").click(function () {
-        
-        $("#book").toggle("display")
+function getChangeOp(key) {
+    $(`#options-${key}`).hide()
+    $(`#div-${key}`).click(function () {
+        $(`#options-${key}`).toggle("display")
     });
-
-    $("#edit").click(function () {
+    $(`li[data-id=edit-${key}]`).click(function () {
+        console.log(key);
         alert('Editar post');
-
     });
-
-    $("#del").click(function () {
+    $(`li[data-id=del-${key}]`).click(function () {
+        console.log(key);   
         alert('Deletar post');
-
     });
-
-
 }
-
-
