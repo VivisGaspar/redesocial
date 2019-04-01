@@ -4,20 +4,17 @@ $(document).ready(function () {
     $('#post-btn').click(getPostInput);
     $('#home-btn-sign-in').click(goSignIn);
     $('#home-btn-sign-up').click(goSignUp);
-    
 });
 
-function goSignIn(event){
+function goSignIn(event) {
     event.preventDefault()
     window.location = 'signIn.html'
 }
 
-function goSignUp(event){
+function goSignUp(event) {
     event.preventDefault()
     window.location = 'signUp.html'
 }
-
-
 
 function getSignUpInfo() {
     $('#btn-sign-up').click(function (event) {
@@ -53,56 +50,43 @@ function getPostInput(event) {
 }
 
 function printPosts(text, key) {
-    
-
     $("#post-list").append(`
-<div>
-<div id="clickme" class="wrap-menu">
-        <div class="dots">
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-        </div>
-
-        <div id="book" class="options">
-            <ul>
-                <li id="edit">Editar</li>
-                <li id="del">Deletar</li>
-            </ul>
-        </div>
-    </div>
-
-    <select id='post-select'>
-        <option value="editar">Editar</option>
-        <option value="excluir" data-id=${key}>Excluir</option>
-    <select/>
-    <p>${text}</p>
-</div>`
+        <div id='post-container-${key}'>
+            <div id='div-${key}' class="wrap-menu">
+                <div class="dots">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+                <div id='options-${key}'>
+                    <ul>
+                        <li id=edit-${key}>Editar</li>
+                        <li id=del-${key}>Deletar</li>
+                    </ul>
+                </div>
+            </div>    
+            <p>${text}</p>
+        </div>`
     );
 
-    $(`#post-select`).change(function () {
-        let value = $(this).val();
-        if (value === "excluir") {
-            if (confirm('quer excluir')) {
-                console.log('user quer excluir');
-            }
-        }
-    })
+    getChangeOp(key);
 }
 
+function getChangeOp(key) {
+    $(`#options-${key}`).hide()
+    $(`#div-${key}`).click(function () {
+        $(`#options-${key}`).toggle("display")
+    });
+    $(`#edit-${key}`).click(function () {
+        console.log(key);
+        alert('Editar post');
+    });
+    $(`#del-${key}`).click(function () {
+        console.log(key);   
+        if (window.confirm("Excluir publicação?")) { 
+            let postContainer = $(`#post-container-${key}`);
+            deletePost(postContainer, key);
+          }
+    });
+}
 
-
-$("#book").hide()
-$("#clickme").click(function () {
-    $("#book").toggle("display")
-});
-
-$("#edit").click(function () {
-    alert('Editar post');
-
-});
-
-$("#del").click(function () {
-    alert('Deletar post');
-
-});

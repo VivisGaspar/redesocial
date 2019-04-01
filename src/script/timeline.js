@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
     getPostsFromDB();
 });
@@ -22,5 +21,14 @@ function renderPosts(snapshot) {
         let post = childSnapshot.val();
         printPosts(post.text, childSnapshot.key);
       });
+}
+
+function deletePost(postContainer, key) {
+    deletePostFromDB(key);
+    postContainer.remove();
+}
+
+function deletePostFromDB(key) {
+    database.ref(`posts/${USER_ID}/${key}`).remove();
 }
 
