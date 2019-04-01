@@ -51,7 +51,7 @@ function getPostInput(event) {
 
 function printPosts(text, key) {
     $("#post-list").append(`
-        <div>
+        <div id='post-container-${key}'>
             <div id='div-${key}' class="wrap-menu">
                 <div class="dots">
                     <div class="dot"></div>
@@ -60,8 +60,8 @@ function printPosts(text, key) {
                 </div>
                 <div id='options-${key}'>
                     <ul>
-                        <li data-id=edit-${key}>Editar</li>
-                        <li data-id=del-${key}>Deletar</li>
+                        <li id=edit-${key}>Editar</li>
+                        <li id=del-${key}>Deletar</li>
                     </ul>
                 </div>
             </div>    
@@ -77,12 +77,16 @@ function getChangeOp(key) {
     $(`#div-${key}`).click(function () {
         $(`#options-${key}`).toggle("display")
     });
-    $(`li[data-id=edit-${key}]`).click(function () {
+    $(`#edit-${key}`).click(function () {
         console.log(key);
         alert('Editar post');
     });
-    $(`li[data-id=del-${key}]`).click(function () {
+    $(`#del-${key}`).click(function () {
         console.log(key);   
-        alert('Deletar post');
+        if (window.confirm("Excluir publicação?")) { 
+            let postContainer = $(`#post-container-${key}`);
+            deletePost(postContainer, key);
+          }
     });
 }
+
