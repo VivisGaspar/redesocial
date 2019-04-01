@@ -56,10 +56,14 @@ A partir do usuários foram definidas duas personas - uma de um professor e outr
 #### As personas 
 
 - Persona 1
+
+
 ![Persona 1 - Professora](https://res.cloudinary.com/mkeu/image/upload/v1553103544/Persona_Professora_Marcela.png)
 
 _________
 - Persona 2
+
+
 ![Persona 2 - Aluna](https://res.cloudinary.com/mkeu/image/upload/v1553103419/Persona_aluna_Mirela.png)
 
 
@@ -90,20 +94,50 @@ Informações fornecidas: O site será uma rede social com foco em promover a co
 
 #### Resultados do teste:
 
+Foram entrevistados potenciais alunos e uma professora.
+Feedbacks:
+
+- Cadastro: dúvida se teria a opção de se cadastrar como professor ou aluno, considerou que essa opção era relevante para moderação das publicações;
+
+- Timeline: gostariam de visualizar a postagem em feeds de notícia (não ficou claro como a timeline foi apresentada - a professora achou mais relevante deixar os posts e interações restritos ao grupo da sala. Também gostariam de saber em qual sala/turma estão;
+
+- Post: o cadeado para optar pela privacidade do post não foi identificado por praticamente nenhum usuário;
+
+- Notificações: gostaram que quando clica-se em notificações elas permaneceram na mesma tela e sugeriram uma funcionalidade para horário das notificações;
+
+- Relevância do produto: todos consideraram relevante. A professora atribuiu essa relevância à possibilidade de whatsapp que a sobrecarrega com muitos grupos (um de cada turma) que a notifica fora do horário comercial.
+
 #### Reorganização do protótipo
+
+Sobre o cadastro, foi informado que a opção de cadastro por professor ou aluno seria desenvolvida em uma próxima versão. Desta forma, a reorganização do protótipo ficou restrita à restruturação da timeline.
+
+Mudanças do protótipo 1 para o 2:
+
+- Post: opção de privacidade
+
+![Mudança botão privacidade](https://res.cloudinary.com/mkeu/image/upload/v1554147455/redesocial_reorganizacao_post.png)
+
+- Timeline: feed de notícias
+  
+  ![Mudança timeline](https://res.cloudinary.com/mkeu/image/upload/v1554147444/redesocial_reorganizacao_timeline.png)
+
+Após as alterações os usuários conseguiram identificar o select para alterar a privacidade e compreenderam a estrutura da timeline.
 
 #### Definição interface do usuário
 
+A interface é a apresentada nos protótipos (imagem abaixo), considerando as limitações de cada versão e pequenas melhoras possibilitadas com CSS.
+
+
+![Interface](https://res.cloudinary.com/mkeu/image/upload/v1554148120/redesocial_interface.png)
+
+
+
 ### 6.  Definição do produto
-**Responder**
--   Que problemas seu produto resolve para estes usuários
--  Quais são os objetivos destes usuários com relação ao produto
-- Objetivos dos usuários com relação ao produto
- - Dados mais importantes para verem na interface
-- Contexto de utilização do produto
--   Quais são as principais funcionalidades do produto
--   Como conferiu se o produto está funcionando para resolver os problemas
--   Como irá garantir que os usuários utilizem este produto
+
+A rede social EducaLab foi idealizada pensando em alunos e professores de ensino médio de escolas particulares dos centros urbanos. Além das funcionalidades básicas de uma rede social como postagem, adicionar amigos, visualizar timeline, a EducaLab também propõe funcionalidades específicas para o contexto educacional. São elas: criação de um ambiente específico para cada sala/turma, moderação do professor, possibilidade de realizar testes e demandar tarefas e organização de agenda e notificações.
+
+Com essas funcionalidades pretende-se incentivar a responsabilidade e senso de organização nos alunos e facilitar a gestão da turma pelos professores, além de garantir uma dinâmica mais atraente e atual/tecnológica de aprendizagem.  
+
 
 ### 7. Implementação
  
