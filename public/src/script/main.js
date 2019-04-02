@@ -3,7 +3,7 @@ $(document).ready(function () {
     getSignInInfo();
     $('#post-btn').click(getPostInput);
     $('#home-btn-sign-in').click(goSignIn);
-    $('#home-btn-sign-up').click(goSignUp);    
+    $('#home-btn-sign-up').click(goSignUp);
 });
 
 function goSignIn(event) {
@@ -49,7 +49,11 @@ function getPostInput(event) {
     $("#post-input").val("");
 }
 
-function printPosts(text, key) {
+function printPosts(text, like, key) {
+    let likes = "";
+    if(like > 0) {
+        likes = like;
+    }
     $("#post-list").append(`
         <div id='post-container-${key}'>
             <div id='div-${key}' class="wrap-menu">
@@ -67,9 +71,13 @@ function printPosts(text, key) {
             </div>    
             <p id=text-${key}>${text}</p>
             <i class="far fa-heart" id="heart-${key}"></i>
-            <p id="likes-${key}"></p>
+            <p id="likes-${key}">${likes}</p>
         </div>`
     );
+
+    if(like > 0) {
+        $(`#heart-${key}`).removeClass('far').addClass('fas');
+    };
 
     getChangeOp(text, key);
     likePost(key);
@@ -96,13 +104,16 @@ function getChangeOp(text, key) {
 }
 
 function likePost(key) {
-        $(`#heart-${key}`).click(function() {
+    $(`#heart-${key}`).click(function () {
         let curtidas = $(this);
-        curtidas.val(Number(curtidas.val()) + 1);
-        $(`#heart-${key}`).removeClass('far').addClass('fas');
+        curtidas.val(Number(curtidas.val()) + 1);        
         $(`#likes-${key}`).html(curtidas.val());
+        let likes = curtidas.val();
+        addLikesToDB(likes, key);
     })
 }
+
+
 
 
 
