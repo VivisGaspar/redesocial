@@ -3,7 +3,7 @@ $(document).ready(function () {
     getSignInInfo();
     $('#post-btn').click(getPostInput);
     $('#home-btn-sign-in').click(goSignIn);
-    $('#home-btn-sign-up').click(goSignUp);
+    $('#home-btn-sign-up').click(goSignUp);    
 });
 
 function goSignIn(event) {
@@ -66,12 +66,13 @@ function printPosts(text, key) {
                 </div>
             </div>    
             <p id=text-${key}>${text}</p>
-            <i class="far fa-heart"></i>
-            <p id="likes"></p>
+            <i class="far fa-heart" id="heart-${key}"></i>
+            <p id="likes-${key}"></p>
         </div>`
     );
 
     getChangeOp(text, key);
+    likePost(key);
 }
 
 function getChangeOp(text, key) {
@@ -94,15 +95,12 @@ function getChangeOp(text, key) {
     });
 }
 
-function likePost() {
-    let heartIcon = $(".fa-heart");
-    heartIcon.click(function() {
-        let curtidas = $(this)
-
+function likePost(key) {
+        $(`#heart-${key}`).click(function() {
+        let curtidas = $(this);
         curtidas.val(Number(curtidas.val()) + 1);
-        $(".fa-heart").removeClass('far').addClass('fas');
-        // console.log(curtidas.val())
-        $('#likes').html(curtidas.val());
+        $(`#heart-${key}`).removeClass('far').addClass('fas');
+        $(`#likes-${key}`).html(curtidas.val());
     })
 }
 
