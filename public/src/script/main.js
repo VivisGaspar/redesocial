@@ -66,6 +66,8 @@ function printPosts(text, key) {
                 </div>
             </div>    
             <p id=text-${key}>${text}</p>
+            <i class="far fa-heart"></i>
+            <p id="likes"></p>
         </div>`
     );
 
@@ -84,12 +86,24 @@ function getChangeOp(text, key) {
         editPost(postP, newText, key);
     });
     $(`#del-${key}`).click(function () {
-        console.log(key);   
-        if (window.confirm("Excluir publicação?")) { 
+        console.log(key);
+        if (window.confirm("Excluir publicação?")) {
             let postContainer = $(`#post-container-${key}`);
             deletePost(postContainer, key);
-          }
+        }
     });
+}
+
+function likePost() {
+    let heartIcon = $(".fa-heart");
+    heartIcon.click(function() {
+        let curtidas = $(this)
+
+        curtidas.val(Number(curtidas.val()) + 1);
+        $(".fa-heart").removeClass('far').addClass('fas');
+        // console.log(curtidas.val())
+        $('#likes').html(curtidas.val());
+    })
 }
 
 
