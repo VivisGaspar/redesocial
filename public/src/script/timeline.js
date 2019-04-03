@@ -19,7 +19,7 @@ function getPostsFromDB() {
 function renderPosts(snapshot) {
     snapshot.forEach(function(childSnapshot) {
         let post = childSnapshot.val();
-        printPosts(post.text, childSnapshot.key);
+        printPosts(post.text, post.like, childSnapshot.key);
       });
 }
 
@@ -40,5 +40,11 @@ function editPost(postP, newText, key) {
 function editPostFromDB(newText, key) {
     database.ref(`posts/${USER_ID}/${key}`).update({
         text: newText
+    });
+}
+
+function addLikesToDB(likes, key) {
+    database.ref(`posts/${USER_ID}/${key}`).update({
+        like: likes
     });
 }
