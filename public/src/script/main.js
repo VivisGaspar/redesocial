@@ -1,6 +1,6 @@
 $(document).ready(function () {
-    getSignUpInfo();
-    getSignInInfo();
+    $('#btn-sign-up').click(getSignUpInfo);
+    $('#btn-sign-in').click(getSignInInfo);
     $('#post-btn').click(getPostInput);
     $('#home-btn-sign-in').click(goSignIn);
     $('#home-btn-sign-up').click(goSignUp);
@@ -16,23 +16,20 @@ function goSignUp(event) {
     window.location = 'signUp.html'
 }
 
-function getSignUpInfo() {
-    $('#btn-sign-up').click(function (event) {
+function getSignUpInfo(event) {
         event.preventDefault()
         const email = $('#email').val();
         const password = $('#password').val();
         const name = $('#name').val();
-        signUp(email, password, name);
-    })
+        const lastName = $('#last-name').val();
+        signUp(email, password, name, lastName);
 }
 
-function getSignInInfo() {
-    $('#btn-sign-in').click(function (event) {
+function getSignInInfo(event) {
         event.preventDefault()
         const emailSignIn = $('#email-sign-in').val();
         const passwordSignIn = $('#password-sign-in').val();
         signIn(emailSignIn, passwordSignIn);
-    })
 }
 
 function getPostInput(event) {
@@ -42,7 +39,7 @@ function getPostInput(event) {
         let newPost = addPostsToDB(postInput);
         let postId = newPost.getKey();
         console.log(postId);
-        printPosts(postInput, postId);
+        printPosts(postInput, 0, postId);
     } else {
         alert("complete");
     }
@@ -51,10 +48,10 @@ function getPostInput(event) {
 
 function printPosts(text, like, key) {
     let likes = "";
-    if(like > 0) {
+    if (like > 0) {
         likes = like;
     }
-    $("#post-list").append(`
+    $("#post-list").prepend(`
         <div id='post-container-${key}'>
             <div id='div-${key}' class="wrap-menu">
                 <div class="dots">
@@ -75,12 +72,12 @@ function printPosts(text, like, key) {
         </div>`
     );
 
-    if(like > 0) {
+    if (like > 0) {
         $(`#heart-${key}`).removeClass('far').addClass('fas');
     };
 
     getChangeOp(text, key);
-    likePost(key);
+    likePost(likes, key);
 }
 
 function getChangeOp(text, key) {
@@ -103,17 +100,16 @@ function getChangeOp(text, key) {
     });
 }
 
-function likePost(key) {
+function likePost(likes, key) {
     $(`#heart-${key}`).click(function () {
-        let curtidas = $(this);
-        curtidas.val(Number(curtidas.val()) + 1);        
-        $(`#likes-${key}`).html(curtidas.val());
-        let likes = curtidas.val();
+        if (likes > 0) {
+            likes = parseInt(likes);
+        }
+        likes += 1;
+        $(`#likes-${key}`).html(likes);
+        if (likes > 0) {
+            $(`#heart-${key}`).removeClass('far').addClass('fas');
+        };
         addLikesToDB(likes, key);
     })
 }
-
-
-
-
-
