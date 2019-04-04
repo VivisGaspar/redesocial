@@ -6,7 +6,9 @@ let USER_ID = window.location.search.match(/\?userId=(.+)/)[1];
 console.log(USER_ID);
 
 function addPostsToDB(postInput) {
-    return database.ref('posts/' + USER_ID).push({ text: postInput });
+    return database.ref('posts/' + USER_ID).push({ 
+        text: postInput
+     });
 }
 
 function getPostsFromDB() {
@@ -19,7 +21,7 @@ function getPostsFromDB() {
 function renderPosts(snapshot) {
     snapshot.forEach(function(childSnapshot) {
         let post = childSnapshot.val();
-        printPosts(post.text, post.like, childSnapshot.key);
+        printPosts(post.text, post.like, post.privacy, childSnapshot.key);
       });
 }
 
