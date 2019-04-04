@@ -4,7 +4,8 @@ $(document).ready(function () {
     $('#post-btn').click(getPostInput);
     $('#home-btn-sign-in').click(goSignIn);
     $('#home-btn-sign-up').click(goSignUp);
-    
+    $('#home-btn-return').click(returnHome);
+
 });
 
 function goSignIn(event) {
@@ -15,6 +16,11 @@ function goSignIn(event) {
 function goSignUp(event) {
     event.preventDefault()
     window.location = 'signUp.html'
+}
+
+function returnHome(event) {
+    event.preventDefault()
+    window.location = 'index.html'
 }
 
 function getSignUpInfo(event) {
@@ -129,16 +135,16 @@ function likePost(likes, key) {
     })
 }
 
-$('#privacy-filter').change(function(){
+$('#privacy-filter').change(function () {
     let choice = $('#privacy-filter option:selected').text();
-    if(choice === 'Todos'){
+    if (choice === 'Todos') {
         $('.private').show()
-        $('.public').show() 
+        $('.public').show()
     } else if (choice === 'Privado') {
-        $('.public').hide() 
-        $('.private').show() 
+        $('.public').hide()
+        $('.private').show()
     } else if (choice === 'Público') {
         $('.private').hide()
-        $('.public').show() 
+        $('.public').show()
     }
 });
