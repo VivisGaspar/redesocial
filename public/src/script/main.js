@@ -48,11 +48,15 @@ function getPostInput(event) {
 
 function printPosts(text, like, key) {
     let likes = "";
+    let filter = $('#privacy-filter option:selected').text()
+    let setPrivacy = $('#privacy-post option:selected').text()
+    // console.log(filter)
     if (like > 0) {
         likes = like;
     }
     $("#post-list").prepend(`
-        <div id='post-container-${key}'>
+        <div class="${filter}"id='post-container-${key}'>
+        <p>${setPrivacy}</p>
             <div id='div-${key}' class="wrap-menu">
                 <div class="dots">
                     <div class="dot"></div>
@@ -113,3 +117,22 @@ function likePost(likes, key) {
         addLikesToDB(likes, key);
     })
 }
+
+
+$('#privacy-filter').change(function(){
+    let choice = $('#privacy-filter option:selected').text();
+    console.log('aqui')
+    if(choice === 'Todos'){
+        console.log('todos')
+        // $('.private').show()
+        // $('.public').show() 
+    } else if (choice === 'Privado') {
+        console.log('privado')
+        // $('.public').hide() 
+        // $('.private').show() 
+    } else if (choice === 'Público') {
+        console.log('publico')
+        // $('.private').hide()
+        // $('.public').show() 
+    }
+});
