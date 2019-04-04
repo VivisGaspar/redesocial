@@ -12,22 +12,24 @@
 </head>
 
 <body>
-    <h1>Time Line</h1>
-    <form>
-        <textarea id="post-input" class="post-area" type="text"
-            placeholder="Qual tema você quer falar hoje?"></textarea>
-        <select id="privacy-post">
-            <option value="public-post">Público</option>
-            <option value="private-post">Privado</option>
-        </select>
-        <button id="post-btn">Postar</button>
-    </form>
-    <select id="privacy-filter">
-        <option value="all-view">Todos</option>
-        <option value="public-view">Público</option>
-        <option value="private-view">Privado</option>
-    </select>
-    <section id="post-list"></section>
+    <div class="container edit-profile">
+        <div class="img-profile">
+            <img src="" alt="">
+            <a href="#">Alterar foto</a>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label" for="name">Nome</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Alterar nome" />
+            <label class="form-label" for="name">Sobrenome</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Alterar sobrenome" />
+            <label class="form-label" for="name">Turma</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Informar turma" />
+            <button class="btn btn-primary form-btn" id="btn-sign-up">Salvar alterações</button>
+        </div>
+
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>

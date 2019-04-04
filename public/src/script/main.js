@@ -4,6 +4,7 @@ $(document).ready(function () {
     $('#post-btn').click(getPostInput);
     $('#home-btn-sign-in').click(goSignIn);
     $('#home-btn-sign-up').click(goSignUp);
+    
 });
 
 function goSignIn(event) {
@@ -17,42 +18,55 @@ function goSignUp(event) {
 }
 
 function getSignUpInfo(event) {
-        event.preventDefault()
-        const email = $('#email').val();
-        const password = $('#password').val();
-        const name = $('#name').val();
-        const lastName = $('#last-name').val();
-        signUp(email, password, name, lastName);
+    event.preventDefault()
+    const email = $('#email').val();
+    const password = $('#password').val();
+    const name = $('#name').val();
+    const lastName = $('#last-name').val();
+    signUp(email, password, name, lastName);
 }
 
 function getSignInInfo(event) {
-        event.preventDefault()
-        const emailSignIn = $('#email-sign-in').val();
-        const passwordSignIn = $('#password-sign-in').val();
-        signIn(emailSignIn, passwordSignIn);
+    event.preventDefault()
+    const emailSignIn = $('#email-sign-in').val();
+    const passwordSignIn = $('#password-sign-in').val();
+    signIn(emailSignIn, passwordSignIn);
 }
 
 function getPostInput(event) {
     event.preventDefault();
     let postInput = $('#post-input').val();
+    let privacyInput = $('#privacy-post').val();
     if (postInput) {
-        let newPost = addPostsToDB(postInput);
+        let newPost = addPostsToDB(postInput, privacyInput);
         let postId = newPost.getKey();
         console.log(postId);
-        printPosts(postInput, 0, postId);
+        printPosts(postInput, 0, privacyInput, postId);
     } else {
         alert("complete");
     }
     $("#post-input").val("");
 }
 
-function printPosts(text, like, key) {
+
+
+
+function printPosts(text, like, privacy, key) {
     let likes = "";
+    let printPrivacy = "";
     if (like > 0) {
         likes = like;
     }
+    if (privacy === "public-post") {
+        printPrivacy = "Público";
+        filter = "public"
+    } else {
+        printPrivacy = "Privado";
+        filter = "private"
+    }
     $("#post-list").prepend(`
-        <div id='post-container-${key}'>
+        <div class="${filter}" id='post-container-${key}'>
+        <p>${printPrivacy}</p>
             <div id='div-${key}' class="wrap-menu">
                 <div class="dots">
                     <div class="dot"></div>
@@ -69,6 +83,7 @@ function printPosts(text, like, key) {
             <p id=text-${key}>${text}</p>
             <i class="far fa-heart" id="heart-${key}"></i>
             <p id="likes-${key}">${likes}</p>
+            <p>_____________</p>
         </div>`
     );
 
@@ -113,3 +128,17 @@ function likePost(likes, key) {
         addLikesToDB(likes, key);
     })
 }
+
+$('#privacy-filter').change(function(){
+    let choice = $('#privacy-filter option:selected').text();
+    if(choice === 'Todos'){
+        $('.private').show()
+        $('.public').show() 
+    } else if (choice === 'Privado') {
+        $('.public').hide() 
+        $('.private').show() 
+    } else if (choice === 'Público') {
+        $('.private').hide()
+        $('.public').show() 
+    }
+});
