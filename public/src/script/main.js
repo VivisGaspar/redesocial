@@ -4,7 +4,7 @@ $(document).ready(function () {
     $('#post-btn').click(getPostInput);
     $('#home-btn-sign-in').click(goSignIn);
     $('#home-btn-sign-up').click(goSignUp);
-    
+    $("#btn-search-users").click(getSearchUsers);
 });
 
 function goSignIn(event) {
@@ -142,3 +142,21 @@ $('#privacy-filter').change(function(){
         $('.public').show() 
     }
 });
+
+function getSearchUsers(event) {
+    event.preventDefault();
+    let searchInput = $('#search-input').val();
+    // window.location = 'search.html?userId=' + USER_ID;
+    console.log('oi');
+    getUsersFromDB(searchInput);    
+}
+
+function printUsers(userArray) {
+    console.log(userArray);
+    $('#users-list').prepend(`
+    <h3>${userArray[0]} ${userArray[1]}</h3>
+    <p>${userArray[2]}</p>
+    `
+    );
+    // window.location = 'search.html?userId=' + USER_ID;
+}

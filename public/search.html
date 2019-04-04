@@ -12,28 +12,10 @@
 </head>
 
 <body>
-	<h1>Time Line</h1>
-	<nav class="navbar navbar-light bg-light">
-		<form id="search-users" class="form-inline">
-			<input id="search-input" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-			<button id="btn-search-users" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-		</form>
-	</nav>
-	<form>
-		<textarea id="post-input" class="post-area" type="text"
-			placeholder="Qual tema você quer falar hoje?"></textarea>
-		<select id="privacy-post">
-			<option value="public-post">Público</option>
-			<option value="private-post">Privado</option>
-		</select>
-		<button id="post-btn">Postar</button>
-	</form>
-	<select id="privacy-filter">
-		<option value="all-view">Todos</option>
-		<option value="public-view">Público</option>
-		<option value="private-view">Privado</option>
-	</select>
-	<section id="post-list"></section>
+	<h1>Search</h1>
+	<section id="users-list">
+	</section>
+
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
 		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>

@@ -3,11 +3,13 @@ const database = firebase.database();
 function signUp(email, password, name, lastName) {
   firebase.auth().createUserWithEmailAndPassword(email, password)
     .then(function (response) {
-      console.log("oi");
+      let getUsername = name + lastName;
+      let username = getUsername.toLowerCase();
       const userId = response.user.uid
       database.ref('users/' + userId).set({
         name: name,
         lastName: lastName,
+        username: username,
         email: email
       });
       console.log(response)
