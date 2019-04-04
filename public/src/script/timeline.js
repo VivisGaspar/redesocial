@@ -5,9 +5,11 @@ $(document).ready(function () {
 let USER_ID = window.location.search.match(/\?userId=(.+)/)[1];
 console.log(USER_ID);
 
-function addPostsToDB(postInput) {
+function addPostsToDB(postInput, privacy) {
     return database.ref('posts/' + USER_ID).push({ 
-        text: postInput
+        text: postInput,
+        like: 0,
+        privacy: privacy
      });
 }
 

@@ -131,9 +131,7 @@ function likePost(likes, key) {
 
 $('#privacy-filter').change(function(){
     let choice = $('#privacy-filter option:selected').text();
-    console.log('aqui')
     if(choice === 'Todos'){
-        console.log('foi')
         $('.private').show()
         $('.public').show() 
     } else if (choice === 'Privado') {
