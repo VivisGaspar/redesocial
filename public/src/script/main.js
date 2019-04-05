@@ -153,10 +153,11 @@ function getSearchUsers(event) {
 
 function printUsers(userArray) {
     console.log(userArray);
-    $('#users-list').prepend(`
+    console.log(userArray[0]);
+    $('#users-list').append(`
     <h3>${userArray[0]} ${userArray[1]}</h3>
     <p>${userArray[2]}</p>
     `
     );
-    // window.location = 'search.html?userId=' + USER_ID;
+    window.location = 'search.html?userId=' + USER_ID;
 }
