@@ -71,30 +71,39 @@ function printPosts(text, like, privacy, key) {
         filter = "private"
     }
     $("#post-list").prepend(`
-        <div class="${filter}" id='post-container-${key}'>
-        <p>${printPrivacy}</p>
-            <div id='div-${key}' class="wrap-menu">
-                <div class="dots">
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                </div>
-                <div id='options-${key}'>
-                    <ul>
-                        <li id=edit-${key}>Editar</li>
-                        <li id=del-${key}>Deletar</li>
-                    </ul>
-                </div>
-            </div>    
-            <p id=text-${key}>${text}</p>
-            <i class="far fa-heart" id="heart-${key}"></i>
-            <p id="likes-${key}">${likes}</p>
-            <p>_____________</p>
+        <div class="${filter} bg-white" id='post-container-${key}'>
+            <div class="d-flex justify-content-end align-items-baseline">
+                <p class="post-timeline-margin">${printPrivacy}</p>   
+                <div id='div-${key}' class="wrap-menu">
+                <i class="fas fa-ellipsis-v post-timeline-margin"></i>
+                    <div id='options-${key}'>
+                        <ul>
+                            <li id=edit-${key}>Editar</li>
+                            <li id=del-${key}>Deletar</li>
+                        </ul>
+                    </div>
+                </div>          
+            </div> 
+            <div class="d-flex justify-content-start post-timeline-margin">
+                <i class="fas fa-user-circle create-post-avatar"></i>
+                <p class="full-name-post">Nome Completo</p>  
+            </div> 
+            <p class="post-timeline-text post-timeline-margin" id=text-${key}>${text}</p>
+            <div class="d-flex justify-content-start align-items-baseline post-timeline-margin">
+                <p id="likes-${key}" class="like-count">${likes}</p>
+                <i class="far fa-heart post-timeline-margin" id="heart-${key}"></i>
+            </div>           
         </div>`
     );
 
+    // <div class="dots">
+    //                     <div class="dot"></div>
+    //                     <div class="dot"></div>
+    //                     <div class="dot"></div>
+    //                 </div>
+
     if (like > 0) {
-        $(`#heart-${key}`).removeClass('far').addClass('fas');
+        $(`#heart-${key}`).removeClass('far').addClass('fas fas-like');
     };
 
     getChangeOp(text, key);
@@ -129,7 +138,7 @@ function likePost(likes, key) {
         likes += 1;
         $(`#likes-${key}`).html(likes);
         if (likes > 0) {
-            $(`#heart-${key}`).removeClass('far').addClass('fas');
+            $(`#heart-${key}`).removeClass('far').addClass('fas fas-like');
         };
         addLikesToDB(likes, key);
     })
