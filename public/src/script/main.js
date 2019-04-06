@@ -5,7 +5,8 @@ $(document).ready(function () {
     $('#home-btn-sign-in').click(goSignIn);
     $('#home-btn-sign-up').click(goSignUp);
     $('#home-btn-return').click(returnHome);
-
+    $('#btn-go-profile').click(goProfile);
+    $('#btn-edit-profile').click(getInfoEdit);
 });
 
 function goSignIn(event) {
@@ -21,6 +22,20 @@ function goSignUp(event) {
 function returnHome(event) {
     event.preventDefault()
     window.location = 'index.html'
+}
+
+function goProfile() {
+    let USER_ID = window.location.search.match(/\?userId=(.+)/)[1];
+    console.log(USER_ID);
+    window.location = 'profile.html?userId=' + USER_ID
+}
+
+function getInfoEdit(e) {
+    e.preventDefault()
+    let nameEdit = $('#name-profile').val()
+    let lastNameEdit = $('#last-name-profile').val()
+    let turma = $('#turma').val()
+    getInfoEditProfile(nameEdit, lastNameEdit, turma)
 }
 
 function getSignUpInfo(event) {

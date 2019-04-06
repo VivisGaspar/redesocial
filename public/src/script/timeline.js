@@ -2,6 +2,8 @@ $(document).ready(function () {
     getPostsFromDB();
 });
 
+
+
 let USER_ID = window.location.search.match(/\?userId=(.+)/)[1];
 console.log(USER_ID);
 
