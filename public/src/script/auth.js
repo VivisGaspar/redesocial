@@ -1,5 +1,4 @@
 const database = firebase.database();
-const user = firebase.currentUser;
 
 function signUp(email, password, name, lastName) {
   firebase.auth().createUserWithEmailAndPassword(email, password)
@@ -13,6 +12,7 @@ function signUp(email, password, name, lastName) {
       });
       console.log(response)
       window.location = 'timeline.html?userId=' + userId;
+      
     })
     .catch(function (error) {
       var errorCode = error.code;
@@ -46,3 +46,5 @@ function signIn(emailSignIn, passwordSignIn) {
     });
 
 }
+
+

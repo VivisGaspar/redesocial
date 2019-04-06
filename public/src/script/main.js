@@ -5,7 +5,7 @@ $(document).ready(function () {
     $('#home-btn-sign-in').click(goSignIn);
     $('#home-btn-sign-up').click(goSignUp);
     $('#home-btn-return').click(returnHome);
-    $('#btn-go-profile').click(goProfile);
+    
 });
 
 function goSignIn(event) {
@@ -21,25 +21,6 @@ function goSignUp(event) {
 function returnHome(event) {
     event.preventDefault()
     window.location = 'index.html'
-}
-
-function goProfile(event) {
-    event.preventDefault()
-    var user = firebase.auth().currentUser;
-    // var name, email, photoUrl, uid, emailVerified;
-
-    if (user != null) {
-        name = user.displayName;
-        email = user.email;
-        photoUrl = user.photoURL;
-        emailVerified = user.emailVerified;
-        uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
-        // this value to authenticate with your backend server, if
-        // you have one. Use User.getToken() instead.
-    }
-
-
-    window.location = 'profile.html?userId=' + uid;
 }
 
 function getSignUpInfo(event) {
@@ -176,3 +157,29 @@ $('#privacy-filter').change(function () {
         $('.public').show()
     }
 });
+
+
+// function goProfile() {
+//     firebase.auth().createUserWithEmailAndPassword()
+//       .then(function (response) {
+//         console.log("oi");
+//         const userId = response.user.uid
+//         // database.ref('users/' + userId).set({
+//         //   name: name,
+//         //   lastName: lastName,
+//         //   email: email
+//         // });
+//         console.log(response)
+//         window.location = 'profile.html?userId=' + userId;
+//       })
+//       .catch(function (error) {
+//         var errorCode = error.code;
+//         var errorMessage = error.message;
+//         if (errorCode == 'auth/weak-password') {
+//           alert('The password is too weak.');
+//         } else {
+//           alert(errorMessage);
+//         }
+//         console.log(errorCode, errorMessage);
+//       });
+//   }
