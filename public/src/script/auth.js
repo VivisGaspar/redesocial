@@ -1,4 +1,5 @@
 const database = firebase.database();
+const user = firebase.currentUser;
 
 function signUp(email, password, name, lastName) {
   firebase.auth().createUserWithEmailAndPassword(email, password)
