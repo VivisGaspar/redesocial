@@ -1,4 +1,4 @@
-function getInfoEditProfile(nameEdit, lastNameEdit, turma){
+function getInfoEditProfile(nameEdit, lastNameEdit, turma) {
     $("#new-profile").prepend(`
     <h1>Dados alterados com sucesso:</h1>
         <p>Nome: ${nameEdit}</p>
@@ -9,4 +9,5 @@ function getInfoEditProfile(nameEdit, lastNameEdit, turma){
         lastName: lastNameEdit,
         turma: turma
     });
+
 }
