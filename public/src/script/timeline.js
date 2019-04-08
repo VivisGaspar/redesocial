@@ -1,5 +1,6 @@
 $(document).ready(function () {
     getPostsFromDB();
+    
 });
 
 
@@ -20,6 +21,7 @@ function getPostsFromDB() {
   .then(function(snapshot) {
       renderPosts(snapshot);
   });
+  
 }
 
 function renderPosts(snapshot) {
@@ -53,4 +55,22 @@ function addLikesToDB(likes, key) {
     database.ref(`posts/${USER_ID}/${key}`).update({
         like: likes
     });
+}
+    
+function getInfoFromDB() {
+    database.ref('users').once('value')
+  .then(function(snapshot) {
+      infoUser(snapshot);
+  });
+}
+
+function infoUser(snapshot) {
+    snapshot.forEach(function(childSnapshot) {
+        let user = childSnapshot.val();
+        let userArray = [user.name + " " + user.lastName];
+        if (USER_ID === childSnapshot.key){
+            console.log(userArray)
+            $('.full-name-post').text(userArray)
+        }
+      });
 }

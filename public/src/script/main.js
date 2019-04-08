@@ -101,7 +101,7 @@ function printPosts(text, like, privacy, key) {
             </div> 
             <div class="d-flex justify-content-start post-timeline-margin">
                 <i class="fas fa-user-circle create-post-avatar"></i>
-                <p class="full-name-post">Nome Completo</p>  
+                <p id="displayName-${key}" class="full-name-post"></p>  
             </div> 
             <p class="post-timeline-text post-timeline-margin" id=text-${key}>${text}</p>
             <div class="d-flex justify-content-start align-items-baseline post-timeline-margin">
@@ -123,7 +123,9 @@ function printPosts(text, like, privacy, key) {
 
     getChangeOp(text, key);
     likePost(likes, key);
+    getInfoFromDB();
 }
+
 
 function getChangeOp(text, key) {
     $(`#options-${key}`).hide()
