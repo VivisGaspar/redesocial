@@ -13,7 +13,9 @@ function signUp(email, password, name, lastName) {
         email: email
       });
       console.log(response)
+
       window.location = 'timeline.html?userId=' + userId + '&timeline';
+
     })
     .catch(function (error) {
       var errorCode = error.code;
@@ -47,3 +49,5 @@ function signIn(emailSignIn, passwordSignIn) {
     });
 
 }
+
+

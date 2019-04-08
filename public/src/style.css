@@ -48,7 +48,7 @@ ul {
   background-color:#76BED0;
 }
 
-.dots {
+/* .dots {
   width: 60px;
   height: 60px;
   padding: 20px;
@@ -57,7 +57,7 @@ ul {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-}
+} */
 
 
 .descript-home {
@@ -155,7 +155,93 @@ ul {
 }
 
 .bg-navbar {
-  background-color: #76BED0
+  background-color: #76BED0;
 }
 
 /* TimeLine */
+.bg-navbar-yellow {
+  background-color: #FDE845;
+}
+
+.bg-timeline-blue {
+  background-color: #CAE9ED;
+  padding-top: 0.5rem;
+}
+
+.timeline-logo {
+  width: 23%;
+}
+
+.profile-avatar {
+  font-size: 3rem;
+  color: gray;
+  margin-right: 0.7rem;
+}
+
+.create-post-avatar {
+  font-size: 2rem;
+  color: lightgrey;
+  margin-right: 0.5rem;
+}
+
+.create-post-area {
+  margin: 1.5rem 0.8rem;
+}
+
+.post-area {
+  width: 17.4rem;
+  height: 8rem;
+  color: grey;
+  font-weight: bold;
+  background-color: lightgrey;
+  border: transparent;
+}
+
+.privacy-post-select {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: grey;
+  height: 1.2rem;
+  background-color: lightgrey;
+}
+
+.view-filter-p {
+  margin: 0.8rem;
+}
+
+.btn-privacy-filter {
+  margin: 0.8rem;
+}
+
+.post-timeline-margin {
+  margin: 0.5rem;
+}
+
+.fa-ellipsis-v {
+  font-size: 1.5rem;
+  color: grey;
+}
+
+.full-name-post {
+  font-weight: bold;
+  color: gray;
+}
+
+.post-timeline-text {
+  color: gray;
+}
+
+.like-count {
+  color: #FDE845;
+  font-weight: bold;
+}
+
+.far {
+  color: #FDE845;
+  font-weight: bold;
+}
+
+.fas-like {
+  color: #FDE845;
+  font-weight: bold;
+}
