@@ -1,17 +1,34 @@
-function getUsersFromDB(searchInput) {
+$(document).ready(function () {
+    getUsersFromDB();
+});
+
+let search = window.location.search.match(/\&search=(.+)/)[1];
+
+
+
+function getUsersFromDB() {
+
     database.ref('users').once('value')
-  .then(function(snapshot) {
-      searchUsers(snapshot, searchInput);
-  });
+        .then(function (snapshot) {
+            searchUsers(snapshot);
+        });
 }
 
-function searchUsers(snapshot, searchInput) {
-    snapshot.forEach(function(childSnapshot) {
+function searchUsers(snapshot) {
+    let searchArray = search.split(",");
+    console.log(searchArray);
+    snapshot.forEach(function (childSnapshot) {
         let user = childSnapshot.val();
-        let userArray = [user.name, user.lastName, user.username, childSnapshot.key];
-        if (userArray.indexOf(searchInput) >= 0){
-            printUsers(userArray);
+        let userArray = [user.name, user.lastName, user.username, childSnapshot.key].map(function (i) {
+            return i.toLowerCase();
+        });
+        console.log('userarray' + userArray);
+        for (peixinho of searchArray) {
+            console.log('interacao' + peixinho);
+            if (userArray.indexOf(peixinho) >= 0) {
+                printUsers(userArray);
+            }
         }
-      });
+    });
 }
 

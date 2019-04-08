@@ -145,19 +145,18 @@ $('#privacy-filter').change(function(){
 
 function getSearchUsers(event) {
     event.preventDefault();
-    let searchInput = $('#search-input').val();
-    // window.location = 'search.html?userId=' + USER_ID;
-    console.log('oi');
-    getUsersFromDB(searchInput);    
+    let searchInput = $('#search-input').val().toLowerCase();
+    let searchArray = searchInput.split(" ");
+    window.location = 'search.html?userId=' + USER_ID +'&search=' + searchArray;    
 }
 
 function printUsers(userArray) {
     console.log(userArray);
     console.log(userArray[0]);
     $('#users-list').append(`
-    <h3>${userArray[0]} ${userArray[1]}</h3>
-    <p>${userArray[2]}</p>
+    <h3>${userArray[0].charAt(0).toUpperCase() + userArray[0].slice(1)} ${userArray[1].charAt(0).toUpperCase() + userArray[1].slice(1)}</h3>
+    <p>@${userArray[2]}</p>
     `
     );
-    window.location = 'search.html?userId=' + USER_ID;
+    
 }
