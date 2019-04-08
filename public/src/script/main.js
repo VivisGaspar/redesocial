@@ -129,17 +129,17 @@ function likePost(likes, key) {
     })
 }
 
-$('#privacy-filter').change(function(){
+$('#privacy-filter').change(function () {
     let choice = $('#privacy-filter option:selected').text();
-    if(choice === 'Todos'){
+    if (choice === 'Todos') {
         $('.private').show()
-        $('.public').show() 
+        $('.public').show()
     } else if (choice === 'Privado') {
-        $('.public').hide() 
-        $('.private').show() 
+        $('.public').hide()
+        $('.private').show()
     } else if (choice === 'Público') {
         $('.private').hide()
-        $('.public').show() 
+        $('.public').show()
     }
 });
 
@@ -147,16 +147,24 @@ function getSearchUsers(event) {
     event.preventDefault();
     let searchInput = $('#search-input').val().toLowerCase();
     let searchArray = searchInput.split(" ");
-    window.location = 'search.html?userId=' + USER_ID +'&search=' + searchArray;    
+    window.location = 'search.html?userId=' + USER_ID + '&search=' + searchArray;
 }
 
 function printUsers(userArray) {
-    console.log(userArray);
-    console.log(userArray[0]);
+    let username = userArray[2];
     $('#users-list').append(`
-    <h3>${userArray[0].charAt(0).toUpperCase() + userArray[0].slice(1)} ${userArray[1].charAt(0).toUpperCase() + userArray[1].slice(1)}</h3>
+    <h3 id='profile-${username}'>${userArray[0].charAt(0).toUpperCase() + userArray[0].slice(1)} ${userArray[1].charAt(0).toUpperCase() + userArray[1].slice(1)}</h3>
     <p>@${userArray[2]}</p>
     `
     );
-    
+    // let userId = window.location.search.match(/\?<=userId=(.*)(?=&)/);
+    goProfile(username);
 }
+
+function goProfile(username) {
+    console.log(username);
+    $(`#profile-${username}`).click(function() {
+        window.location = 'profile.html?userId='+ USER_ID + '&profile=' + username;
+    })
+}
+

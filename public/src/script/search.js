@@ -4,8 +4,6 @@ $(document).ready(function () {
 
 let search = window.location.search.match(/\&search=(.+)/)[1];
 
-
-
 function getUsersFromDB() {
 
     database.ref('users').once('value')
@@ -22,9 +20,7 @@ function searchUsers(snapshot) {
         let userArray = [user.name, user.lastName, user.username, childSnapshot.key].map(function (i) {
             return i.toLowerCase();
         });
-        console.log('userarray' + userArray);
         for (peixinho of searchArray) {
-            console.log('interacao' + peixinho);
             if (userArray.indexOf(peixinho) >= 0) {
                 printUsers(userArray);
             }

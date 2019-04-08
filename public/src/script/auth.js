@@ -13,7 +13,7 @@ function signUp(email, password, name, lastName) {
         email: email
       });
       console.log(response)
-      window.location = 'timeline.html?userId=' + userId;
+      window.location = 'timeline.html?userId=' + userId + '&timeline';
     })
     .catch(function (error) {
       var errorCode = error.code;
@@ -32,7 +32,7 @@ function signIn(emailSignIn, passwordSignIn) {
     .then(function (response) {
       console.log("logado");
       const userId = response.user.uid
-      window.location = 'timeline.html?userId=' + userId;
+      window.location = 'timeline.html?userId=' + userId + '&timeline';
     })
     .catch(function (error) {
       var errorCode = error.code;
