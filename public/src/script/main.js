@@ -163,8 +163,29 @@ function printUsers(userArray) {
 
 function goProfile(username) {
     console.log(username);
-    $(`#profile-${username}`).click(function() {
-        window.location = 'profile.html?userId='+ USER_ID + '&profile=' + username;
+    $(`#profile-${username}`).click(function () {
+        window.location = 'otherprofile.html?userId=' + USER_ID + '&profile=' + username;
     })
+}
+
+function printOtherUserInfo(username, name, lastName, turma) {
+    $('#profile-info').append(`
+    <h2>${name} ${lastName}</h2>
+    <h6>${username}</h6>
+    <h5>Turma: ${turma}</h5>
+    `
+    );
+
+}
+
+function printOtherUserPosts(text, likes, privacy, otherUserKey) {
+    if (privacy === 'public-post') {
+        $("#profile-posts").prepend(`
+            <p id=text-${otherUserKey}>${text}</p>
+            <i class="far fa-heart" id="heart-${otherUserKey}"></i>
+            <p id="likes-${otherUserKey}">${likes}</p>
+        </div>`
+        );
+    }
 }
 

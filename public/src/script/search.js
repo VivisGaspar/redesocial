@@ -2,8 +2,6 @@ $(document).ready(function () {
     getUsersFromDB();
 });
 
-let search = window.location.search.match(/\&search=(.+)/)[1];
-
 function getUsersFromDB() {
 
     database.ref('users').once('value')
@@ -13,6 +11,7 @@ function getUsersFromDB() {
 }
 
 function searchUsers(snapshot) {
+    let search = window.location.search.match(/\&search=(.+)/)[1];
     let searchArray = search.split(",");
     console.log(searchArray);
     snapshot.forEach(function (childSnapshot) {
