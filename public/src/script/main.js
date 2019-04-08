@@ -4,9 +4,13 @@ $(document).ready(function () {
     $('#post-btn').click(getPostInput);
     $('#home-btn-sign-in').click(goSignIn);
     $('#home-btn-sign-up').click(goSignUp);
+
+    $("#btn-search-users").click(getSearchUsers);
+
     $('#home-btn-return').click(returnHome);
     $('#btn-go-profile').click(goProfile);
     $('#btn-edit-profile').click(getInfoEdit);
+
 });
 
 function goSignIn(event) {
@@ -174,3 +178,50 @@ $('#privacy-filter').change(function () {
         $('.public').show()
     }
 });
+
+function getSearchUsers(event) {
+    event.preventDefault();
+    let searchInput = $('#search-input').val().toLowerCase();
+    let searchArray = searchInput.split(" ");
+    window.location = 'search.html?userId=' + USER_ID + '&search=' + searchArray;
+}
+
+function printUsers(userArray) {
+    let username = userArray[2];
+    $('#users-list').append(`
+    <h3 id='profile-${username}'>${userArray[0].charAt(0).toUpperCase() + userArray[0].slice(1)} ${userArray[1].charAt(0).toUpperCase() + userArray[1].slice(1)}</h3>
+    <p>@${userArray[2]}</p>
+    `
+    );
+    // let userId = window.location.search.match(/\?<=userId=(.*)(?=&)/);
+    goProfile(username);
+}
+
+function goProfile(username) {
+    console.log(username);
+    $(`#profile-${username}`).click(function () {
+        window.location = 'otherprofile.html?userId=' + USER_ID + '&profile=' + username;
+    })
+}
+
+function printOtherUserInfo(username, name, lastName, turma) {
+    $('#profile-info').append(`
+    <h2>${name} ${lastName}</h2>
+    <h6>${username}</h6>
+    <h5>Turma: ${turma}</h5>
+    `
+    );
+
+}
+
+function printOtherUserPosts(text, likes, privacy, otherUserKey) {
+    if (privacy === 'public-post') {
+        $("#profile-posts").prepend(`
+            <p id=text-${otherUserKey}>${text}</p>
+            <i class="far fa-heart" id="heart-${otherUserKey}"></i>
+            <p id="likes-${otherUserKey}">${likes}</p>
+        </div>`
+        );
+    }
+}
+
