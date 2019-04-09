@@ -4,9 +4,7 @@ $(document).ready(function () {
     $('#post-btn').click(getPostInput);
     $('#home-btn-sign-in').click(goSignIn);
     $('#home-btn-sign-up').click(goSignUp);
-
     $("#btn-search-users").click(getSearchUsers);
-
     $('#home-btn-return').click(returnHome);
     $('#btn-go-profile').click(goProfile);
     $('#btn-edit-profile').click(getInfoEdit);
@@ -29,9 +27,10 @@ function returnHome(event) {
 }
 
 function goProfile() {
+    console.log('what');
     let USER_ID = window.location.search.match(/\?userId=(.+)/)[1];
     console.log(USER_ID);
-    window.location = 'profile.html?userId=' + USER_ID
+    window.location = 'profile.html?userId=' + USER_ID + '&profile'
 }
 
 function getInfoEdit(e) {
@@ -187,20 +186,20 @@ function getSearchUsers(event) {
 }
 
 function printUsers(userArray) {
-    let username = userArray[2];
+    let otherUserKey = userArray[3];
     $('#users-list').append(`
-    <h3 id='profile-${username}'>${userArray[0].charAt(0).toUpperCase() + userArray[0].slice(1)} ${userArray[1].charAt(0).toUpperCase() + userArray[1].slice(1)}</h3>
+    <h3 id='profile-${otherUserKey}'>${userArray[0].charAt(0).toUpperCase() + userArray[0].slice(1)} ${userArray[1].charAt(0).toUpperCase() + userArray[1].slice(1)}</h3>
     <p>@${userArray[2]}</p>
     `
     );
     // let userId = window.location.search.match(/\?<=userId=(.*)(?=&)/);
-    goProfile(username);
+    goOtherProfile(otherUserKey);
 }
 
-function goProfile(username) {
-    console.log(username);
-    $(`#profile-${username}`).click(function () {
-        window.location = 'otherprofile.html?userId=' + USER_ID + '&profile=' + username;
+function goOtherProfile(otherUserKey) {
+    console.log(otherUserKey);
+    $(`#profile-${otherUserKey}`).click(function () {
+        window.location = 'otherprofile.html?userId=' + USER_ID + '&profile=' + otherUserKey;
     })
 }
 
