@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Educalab</title>
+    <link href="https://fonts.googleapis.com/css?family=Advent+Pro" rel="stylesheet">
     <link rel="icon" href="src/assets/img/logo-educa.png" type="image/png" sizes="16x16">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -16,20 +17,29 @@
     <nav class="navbar justify-content-end" style="background-color: #76BED0">
         <form class="form-inline">
             <button id="home-btn-sign-in" type="button" class="btn btn-secondary">LOGIN</button>
-            <button id="home-btn-sign-up" type="button" class="btn btn-secondary responsive">CADASTRAR</button>
+            <button id="home-btn-sign-up" type="button" class="btn btn-secondary responsive-hide">CADASTRAR</button>
         </form>
     </nav>
 
 
     <div class="descript-home">
         <div class="descript-home box" style="width: 22rem;">
-            <img class="logo" src="src/assets/img/logo-educa.png" alt="logo Educalab">
-            <h4 class="responsive">Rede Social Educacional</h4>
-            <p class="h5 font-weight-light responsive">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis
+            <div>
+<img class="logo" src="src/assets/img/logo-educa.png" alt="logo Educalab">
+<div class="container-triangle resonsive-show">
+    <div id="left"></div>
+    <div id="right"></div>
+    <h1 class="descript-text">Educão em Rede</h1>
+    <p class="descript-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit  amet consectetur, adipisicing eli</p>
+  </div>
+            
+            </div>
+            <h3 class="responsive-hide descript-text">Educaçao em Rede</h3>
+            <p class="h5 font-weight-light responsive-hide descript-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis
                 porro, culpa
                 cumque.</p>
 
-            <form class="form-sign-up form-link">
+            <form class="form-sign-up resonsive-show">
                 <h1 class="form-title">CADASTRE-SE</h1>
                 <div class="form-group">
                     <label class="form-label" for="name">Nome</label>
