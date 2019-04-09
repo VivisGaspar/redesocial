@@ -1,8 +1,10 @@
 function getInfoEditProfile(nameEdit, lastNameEdit, turma) {
     $("#new-profile").html(`
-    <h1>Dados alterados com sucesso:</h1>
+    <h3>Dados alterados com sucesso:</h3>
         <p>Nome: ${nameEdit}</p>
+    <p>Sobrenome: ${lastNameEdit}</p>
         <p>Sobrenome: ${lastNameEdit}</p>
+    <p>Turma: ${turma}</p>
         <p>Turma: ${turma}</p>`)
 
 

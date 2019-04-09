@@ -257,6 +257,27 @@ ul {
   color: rgb(252, 238, 160);
 }
 
+.container-profile {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-items: center;
+  align-items: baseline;
+}
+
+.edit-profile {
+  background-color: #CCCCCC;
+  padding: 2em;
+  margin: 3px auto 3px;
+  border-radius: 20px;
+}
+
+.pic-edit-profile {
+  width: 50%;
+  opacity: 0.2;
+  fill: #EDD432;
+}
+
+
 @media (min-width: 1280px) {
   .timeline-logo {
     width: 5%;
@@ -312,6 +333,20 @@ ul {
   .resonsive-show {
     display: block;
   }
+
+  .container-profile {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    
+  }
+  
+  .container-profile * {
+    flex-basis: 40%;
+  }
+}
+
 }
 
 .other-profile-avatar{
