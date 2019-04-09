@@ -319,8 +319,6 @@ ul {
     shape-outside: polygon(0.33% 3px, 100.23% 0.17%, 2px 99.73%);
   }
 
-  
-
   .container-triangle {
         width: 15em;
     /* margin-right: 2em; */
@@ -347,11 +345,11 @@ ul {
   .container-profile * {
     flex-basis: 40%;
   }
-  
-  
- 
-
-  
 }
 
+}
 
+.other-profile-avatar{
+  font-size: 4rem;
+  color: #76BED0;
+}
