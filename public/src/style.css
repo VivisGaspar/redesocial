@@ -246,6 +246,10 @@ ul {
   font-weight: bold;
 }
 
+.form-link {
+  display: none;
+}
+
 @media (min-width: 1280px) {
   .timeline-logo {
     width: 5%;
@@ -257,7 +261,34 @@ ul {
   }
 
   .descript-home {
+    display: -webkit-box;
     background-position: unset;
+    text-align: -webkit-center;
+  }
+
+  .logo {
+    max-height: 100%;
+  }
+
+  .form-sign-up{
+    background: rgba(0,0,0,0.1);
+    margin: 10%;
+    border: none;
+    height: 75vh;
+    padding: 1em;
+  }
+
+  .form-label, .form-title {
+    color: #FFFF;
+  }
+  
+
+  .responsive {
+    display: none;
+  }
+
+  .form-link {
+    display: block;
   }
 }
 
