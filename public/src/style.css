@@ -115,6 +115,7 @@ ul {
   color: #1F2D3D;
   font-weight: bold;
   margin: 30px 0;
+  text-align: center;
 }
 
 .form-label {
@@ -244,6 +245,73 @@ ul {
 .fas-like {
   color: #FDE845;
   font-weight: bold;
+}
+
+.form-sign-up, .container-triangle {
+  display: none;
+}
+.descript-text{
+  font-family: 'Advent Pro';
+  text-align: justify;
+  hyphens: auto;
+  color: rgb(252, 238, 160);
+}
+
+@media (min-width: 1280px) {
+  .timeline-logo {
+    width: 5%;
+  }
+
+  .create-post-area {
+    display: flex;
+    justify-content: center;
+  }
+
+  .descript-home {
+    display: -webkit-box;
+    background-position: unset;
+    text-align: -webkit-center;
+  }
+
+  .logo {
+    max-height: 100%;
+  }
+
+  .form-sign-up{
+    background: rgba(0,0,0,0.1);
+    margin: 10%;
+    border: none;
+    height: 79vh;
+    padding: 1em;
+  }
+
+  .form-label, .form-title {
+    color: #FFFF;
+    font-weight: 100;
+    font-size: 1em;
+  }
+  
+  #left {
+    float: left;
+    height: 500px;
+    width: 342px;
+    shape-outside: polygon(0.33% 3px, 100.23% 0.17%, 2px 99.73%);
+  }
+
+  .container-triangle {
+        width: 15em;
+    /* margin-right: 2em; */
+    padding-right: 4em;
+    margin-top: -8em;
+  }
+
+  .responsive-hide {
+    display: none;
+  }
+
+  .resonsive-show {
+    display: block;
+  }
 }
 
 .other-profile-avatar{
