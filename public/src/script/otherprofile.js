@@ -13,27 +13,25 @@ function getOtherUserFromDB() {
 }
 
 function searchOtherUser(snapshot) {
-    console.log('oi1');
     snapshot.forEach(function (childSnapshot) {
         let user = childSnapshot.val();
         if (otherUserKey === childSnapshot.key) {
-            console.log('oi');
             printOtherUserInfo(user.username, user.name, user.lastName, user.turma);
-            getOtherUsersPostsFromDB(childSnapshot.key);
+            getOtherUsersPostsFromDB(childSnapshot.key, user.name, user.lastName);
         };
     });
 }
 
-function getOtherUsersPostsFromDB(otherUserKey) {
+function getOtherUsersPostsFromDB(otherUserKey, name, lastName) {
     database.ref('posts/' + otherUserKey).once('value')
   .then(function(snapshot) {
-      renderOtherUserPosts(snapshot);
+      renderOtherUserPosts(snapshot, name, lastName);
   });
 }
 
-function renderOtherUserPosts(snapshot) {
+function renderOtherUserPosts(snapshot, name, lastName) {
     snapshot.forEach(function(childSnapshot) {
         let post = childSnapshot.val();
-        printOtherUserPosts(post.text, post.like, post.privacy, childSnapshot.key);
+        printOtherUserPosts(post.text, post.like, post.privacy, childSnapshot.key, name, lastName);
       });
 }
