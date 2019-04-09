@@ -27,10 +27,7 @@ function returnHome(event) {
 }
 
 function goProfile() {
-    console.log('what');
-    let USER_ID = window.location.search.match(/\?userId=(.+)/)[1];
-    console.log(USER_ID);
-    window.location = 'profile.html?userId=' + USER_ID //+ '&profile'
+    window.location = 'profile.html?userId=' + USER_ID + '&profile'
 }
 
 function getInfoEdit(e) {
