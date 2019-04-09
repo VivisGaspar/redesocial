@@ -6,10 +6,11 @@ $(document).ready(function () {
     $('#home-btn-sign-up').click(goSignUp);
     $("#btn-search-users").click(getSearchUsers);
     $('#home-btn-return').click(returnHome);
-    $('#btn-go-profile').click(goProfile);
+    $('.btn-go-profile').click(goProfile);
     $('#btn-edit-profile').click(getInfoEdit);
     $('.dropdown-toggle').dropdown();
     $('.btn-logout').click(goHome);
+    $('.btn-go-timeline').click(goTimeline);
 });
 
 function goSignIn(event) {
@@ -189,8 +190,10 @@ function getSearchUsers(event) {
 function printUsers(userArray) {
     let otherUserKey = userArray[3];
     $('#users-list').append(`
-    <h3 id='profile-${otherUserKey}'>${userArray[0].charAt(0).toUpperCase() + userArray[0].slice(1)} ${userArray[1].charAt(0).toUpperCase() + userArray[1].slice(1)}</h3>
-    <p>@${userArray[2]}</p>
+    <li id='profile-${otherUserKey}' class="list-group-item">
+    <h4 class='mb-0 text-secondary'>${userArray[0].charAt(0).toUpperCase() + userArray[0].slice(1)} ${userArray[1].charAt(0).toUpperCase() + userArray[1].slice(1)}</h4>
+    <p class="text-info">@${userArray[2]}</p>
+    </li>
     `
     );
     // let userId = window.location.search.match(/\?<=userId=(.*)(?=&)/);
@@ -205,24 +208,45 @@ function goOtherProfile(otherUserKey) {
 }
 
 function printOtherUserInfo(username, name, lastName, turma) {
+    let userClass = " ";
+    if(turma) {
+        userClass = turma;
+    }
     $('#profile-info').append(`
-    <h2>${name} ${lastName}</h2>
-    <h6>${username}</h6>
-    <h5>Turma: ${turma}</h5>
+    <i class="fas fa-user-circle other-profile-avatar m-3"></i>
+    <h2 class='mb-0 text-secondary'>${name} ${lastName}</h2>
+    <h6 class='text-info'>@${username}</h6>
+    <h6 class='m-3 text-secondary'><i class="fas fa-graduation-cap"></i> turma: ${userClass}</h6>
     `
     );
 
 }
 
-function printOtherUserPosts(text, likes, privacy, otherUserKey) {
+function printOtherUserPosts(text, like, privacy, otherUserKey, name, lastName) {
+    let likes = "";
+    if (like > 0) {
+        likes = like;
+    }
+
     if (privacy === 'public-post') {
         $("#profile-posts").prepend(`
-            <p id=text-${otherUserKey}>${text}</p>
-            <i class="far fa-heart" id="heart-${otherUserKey}"></i>
-            <p id="likes-${otherUserKey}">${likes}</p>
+        <div class="bg-white">
+        <div class="d-flex justify-content-start">
+                <i class="fas fa-user-circle create-post-avatar mt-2"></i>
+                <p class="full-name-post mt-2"> ${name} ${lastName}</p>  
+        </div>
+        <p id=text-${otherUserKey} class="post-timeline-text post-timeline-margin">${text}</p>
+        <div class="d-flex justify-content-start align-items-baseline post-timeline-margin">            
+            <p id="likes-${otherUserKey}" class="like-count">${likes}</p>
+                <i class="far fa-heart post-timeline-margin" id="heart-${otherUserKey}"></i>
+            
+        </div>
         </div>`
         );
     }
+    if (like > 0) {
+        $(`#heart-${otherUserKey}`).removeClass('far').addClass('fas fas-like');
+    };
 }
 
 function goHome() {
@@ -231,3 +255,6 @@ function goHome() {
     }
 }
 
+function goTimeline() {
+    window.location = 'timeline.html?userId=' + USER_ID + '&timeline'
+}
