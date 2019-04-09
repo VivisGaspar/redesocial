@@ -245,3 +245,19 @@ ul {
   color: #FDE845;
   font-weight: bold;
 }
+
+@media (min-width: 1280px) {
+  .timeline-logo {
+    width: 5%;
+  }
+
+  .create-post-area {
+    display: flex;
+    justify-content: center;
+  }
+
+  .descript-home {
+    background-position: unset;
+  }
+}
+
