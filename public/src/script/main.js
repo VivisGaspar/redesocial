@@ -8,22 +8,26 @@ $(document).ready(function () {
     $('#home-btn-return').click(returnHome);
     $('#btn-go-profile').click(goProfile);
     $('#btn-edit-profile').click(getInfoEdit);
-
+    $('.dropdown-toggle').dropdown();
+    $('.btn-logout').click(goHome);
 });
 
 function goSignIn(event) {
     event.preventDefault()
-    window.location = 'signIn.html'
+    // window.location = 'signIn.html'
+    window.location.replace('signIn.html')
 }
 
 function goSignUp(event) {
     event.preventDefault()
-    window.location = 'signUp.html'
+    // window.location = 'signUp.html'
+    window.location.replace('signUp.html')
 }
 
 function returnHome(event) {
     event.preventDefault()
-    window.location = 'index.html'
+    // window.location = 'index.html'
+    window.location.replace('index.html')
 }
 
 function goProfile() {
@@ -218,6 +222,12 @@ function printOtherUserPosts(text, likes, privacy, otherUserKey) {
             <p id="likes-${otherUserKey}">${likes}</p>
         </div>`
         );
+    }
+}
+
+function goHome() {
+    if (window.confirm("Sair da sua conta?")) {
+        window.location.replace('index.html')
     }
 }
 
