@@ -76,7 +76,9 @@ ul {
 }
 
 .box {
+  display: flex;
   padding:20px;
+  width: 22rem
 }
 
 .logo {
@@ -347,9 +349,14 @@ ul {
   }
 }
 
-}
 
 .other-profile-avatar{
   font-size: 4rem;
   color: #76BED0;
+}
+
+
+.input-group {
+  display: flex;
+  flex-direction: column;
 }
