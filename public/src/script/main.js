@@ -8,9 +8,39 @@ $(document).ready(function () {
     $('#home-btn-return').click(returnHome);
     $('.btn-go-profile').click(goProfile);
     $('#btn-edit-profile').click(getInfoEdit);
-    $('.dropdown-toggle').dropdown();
+    // $('.dropdown-toggle').dropdown();
     $('.btn-logout').click(goHome);
     $('.btn-go-timeline').click(goTimeline);
+    
+    //recebe o email salvo no localStorage
+    const email = localStorage.getItem('emailForSignIn');
+    
+    //verfica sempre que entrar no HTML de signIn se é uma url do email
+    if (email && location.search && location.search.split('oobCode=')[1]) {
+
+        //insere o email salvo no localStorage no campo de email 
+        $('#email-sign-in').val(email);
+        
+        //separa o código enviado via queryString (valor do oobCode) que está na url
+        const code = location.search.split('&').map(query => {
+            if (query.split('=')[0] === 'oobCode') {
+                return query.split('=')[1];
+            }
+        }).join('');
+
+        //cria uma nova senha dinâmica de 6 digitos
+        const newPassword = `${Math.floor(Math.random() * 999999) + 1}`;
+        
+        //adiciona a nova senha criada dinamicamente para o email salvo
+        firebase.auth().confirmPasswordReset(code, newPassword)
+        .then(function() {
+            alert(`Sua nova senha é: ${newPassword}`);
+        })
+        .catch(function(error) {
+            console.error(error);
+        });
+        
+    }
 });
 
 function goSignIn(event) {
@@ -91,41 +121,41 @@ function printPosts(text, like, privacy, key) {
         filter = "private"
     }
     $("#post-list").prepend(`
-        <div class="${filter} bg-white" id='post-container-${key}'>
-            <div class="d-flex justify-content-end align-items-baseline">
-                <p class="post-timeline-margin">${printPrivacy}</p>   
-                <div id='div-${key}' class="wrap-menu">
-                <i class="fas fa-ellipsis-v post-timeline-margin"></i>
-                    <div id='options-${key}'>
-                        <ul>
-                            <li id=edit-${key}>Editar</li>
-                            <li id=del-${key}>Deletar</li>
-                        </ul>
-                    </div>
-                </div>          
-            </div> 
-            <div class="d-flex justify-content-start post-timeline-margin">
-                <i class="fas fa-user-circle create-post-avatar"></i>
-                <p id="displayName-${key}" class="full-name-post"></p>  
-            </div> 
-            <p class="post-timeline-text post-timeline-margin" id=text-${key}>${text}</p>
-            <div class="d-flex justify-content-start align-items-baseline post-timeline-margin">
-                <p id="likes-${key}" class="like-count">${likes}</p>
-                <i class="far fa-heart post-timeline-margin" id="heart-${key}"></i>
-            </div>           
-        </div>`
+    <div class="${filter} bg-white" id='post-container-${key}'>
+    <div class="d-flex justify-content-end align-items-baseline">
+    <p class="post-timeline-margin">${printPrivacy}</p>   
+    <div id='div-${key}' class="wrap-menu">
+    <i class="fas fa-ellipsis-v post-timeline-margin"></i>
+    <div id='options-${key}'>
+    <ul>
+    <li id=edit-${key}>Editar</li>
+    <li id=del-${key}>Deletar</li>
+    </ul>
+    </div>
+    </div>          
+    </div> 
+    <div class="d-flex justify-content-start post-timeline-margin">
+    <i class="fas fa-user-circle create-post-avatar"></i>
+    <p id="displayName-${key}" class="full-name-post"></p>  
+    </div> 
+    <p class="post-timeline-text post-timeline-margin" id=text-${key}>${text}</p>
+    <div class="d-flex justify-content-start align-items-baseline post-timeline-margin">
+    <p id="likes-${key}" class="like-count">${likes}</p>
+    <i class="far fa-heart post-timeline-margin" id="heart-${key}"></i>
+    </div>           
+    </div>`
     );
-
+    
     // <div class="dots">
     //                     <div class="dot"></div>
     //                     <div class="dot"></div>
     //                     <div class="dot"></div>
     //                 </div>
-
+    
     if (like > 0) {
         $(`#heart-${key}`).removeClass('far').addClass('fas fas-like');
     };
-
+    
     getChangeOp(text, key);
     likePost(likes, key);
     getInfoFromDB();
@@ -219,7 +249,7 @@ function printOtherUserInfo(username, name, lastName, turma) {
     <h6 class='m-3 text-secondary'><i class="fas fa-graduation-cap"></i> turma: ${userClass}</h6>
     `
     );
-
+    
 }
 
 function printOtherUserPosts(text, like, privacy, otherUserKey, name, lastName) {
@@ -227,19 +257,19 @@ function printOtherUserPosts(text, like, privacy, otherUserKey, name, lastName) 
     if (like > 0) {
         likes = like;
     }
-
+    
     if (privacy === 'public-post') {
         $("#profile-posts").prepend(`
         <div class="bg-white">
         <div class="d-flex justify-content-start">
-                <i class="fas fa-user-circle create-post-avatar mt-2"></i>
-                <p class="full-name-post mt-2"> ${name} ${lastName}</p>  
+        <i class="fas fa-user-circle create-post-avatar mt-2"></i>
+        <p class="full-name-post mt-2"> ${name} ${lastName}</p>  
         </div>
         <p id=text-${otherUserKey} class="post-timeline-text post-timeline-margin">${text}</p>
         <div class="d-flex justify-content-start align-items-baseline post-timeline-margin">            
-            <p id="likes-${otherUserKey}" class="like-count">${likes}</p>
-                <i class="far fa-heart post-timeline-margin" id="heart-${otherUserKey}"></i>
-            
+        <p id="likes-${otherUserKey}" class="like-count">${likes}</p>
+        <i class="far fa-heart post-timeline-margin" id="heart-${otherUserKey}"></i>
+        
         </div>
         </div>`
         );
