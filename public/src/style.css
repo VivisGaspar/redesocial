@@ -248,8 +248,8 @@ ul {
   font-weight: bold;
 }
 
-.form-sign-up, .container-triangle {
-  /* display: none; */
+.form-sign-up-desktop, .container-triangle {
+  display: none;
 }
 
 .descript-text{
