@@ -62,10 +62,8 @@ ul {
 
 .descript-home {
   display: flex;
-  flex-direction: column;
   align-items: flex-end;
   justify-content: flex-end;
-  text-align: right;
   height: 90vh;
   background: url(assets/img/home-bg.jpg) no-repeat center center;
   background-size: contain;
@@ -76,8 +74,11 @@ ul {
 }
 
 .box {
+  flex-basis: 65%;
   padding:20px;
+  /* width: 20%; */
 }
+
 
 .logo {
   max-width:230px;
@@ -101,7 +102,7 @@ ul {
 .form-sign-up, .form-sign-in {
   width: 100%;
   padding: 5px;
-  background-color: #EDD432;
+  background-color: #EFB600;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -247,12 +248,14 @@ ul {
   font-weight: bold;
 }
 
-.container-triangle {
+
+.form-sign-up-desktop, .container-triangle {
   display: none;
 }
+
 .descript-text{
   font-family: 'Advent Pro';
-  text-align: justify;
+  text-align: inherit;
   hyphens: auto;
   color: rgb(252, 238, 160);
 }
@@ -289,16 +292,26 @@ ul {
   }
 
   .descript-home {
-    display: -webkit-box;
+    display: flex;
     background-position: unset;
-    text-align: -webkit-center;
+    align-items: center;
+  }
+
+  .home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .descript-text{
+    text-align: justify;
   }
 
   .logo {
     max-height: 100%;
   }
 
-  .form-sign-up{
+  .form-sign-up-desktop{
     background: rgba(0,0,0,0.1);
     margin: 10%;
     border: none;
@@ -347,9 +360,14 @@ ul {
   }
 }
 
-}
 
 .other-profile-avatar{
   font-size: 4rem;
   color: #76BED0;
+}
+
+
+.input-group {
+  display: flex;
+  flex-direction: column;
 }
