@@ -1,7 +1,7 @@
 const database = firebase.database();
 
 const actionCodeSettings = {
-    url: 'https://localhost:8080/signIn.html',
+    url: 'https://educalab-52ee0.firebaseapp.com/signIn.html',
     handleCodeInApp: true
 };
 
