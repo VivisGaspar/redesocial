@@ -60,7 +60,7 @@ ul {
 } */
 
 
-.descript-home {
+.description-home {
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
@@ -253,7 +253,7 @@ ul {
   display: none;
 }
 
-.descript-text{
+.description-text{
   font-family: 'Advent Pro';
   text-align: inherit;
   hyphens: auto;
@@ -291,7 +291,7 @@ ul {
     justify-content: center;
   }
 
-  .descript-home {
+  .description-home {
     display: flex;
     background-position: unset;
     align-items: center;
@@ -303,7 +303,7 @@ ul {
     align-items: center;
   }
 
-  .descript-text{
+  .description-text{
     text-align: justify;
   }
 
@@ -370,4 +370,8 @@ ul {
 .input-group {
   display: flex;
   flex-direction: column;
+}
+
+.bg-nav-home-blue {
+  background-color: #76BED0;
 }
