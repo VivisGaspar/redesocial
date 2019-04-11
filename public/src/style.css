@@ -1,6 +1,7 @@
 body {
-  font-family: "Segoe UI","Helvetica Neue","Noto Sans","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"
+  font-family: "Segoe UI","Helvetica Neue","Noto Sans","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 }  
+
 li {
   list-style-type:none;
 }
@@ -9,7 +10,6 @@ li:hover{
   background-color:#76BED0;
   color:#fff;
   cursor:pointer;
-  
 }
 
 ul {
@@ -48,18 +48,6 @@ ul {
   background-color:#76BED0;
 }
 
-/* .dots {
-  width: 60px;
-  height: 60px;
-  padding: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-} */
-
-
 .descript-home {
   display: flex;
   align-items: flex-end;
@@ -68,7 +56,7 @@ ul {
   background: url(assets/img/home-bg.jpg) no-repeat center center;
   background-size: contain;
   background-attachment: fixed;
-  font-size: 25px;
+  font-size: 1.20em;
   background-position: left;
   background-size: cover;
 }
@@ -76,7 +64,6 @@ ul {
 .box {
   flex-basis: 65%;
   padding:20px;
-  /* width: 20%; */
 }
 
 
@@ -95,6 +82,10 @@ ul {
 
 .btn-secondary {
   margin: 5px;
+}
+
+.justify-content-end {
+  background-color: #76BED0;
 }
 
 /* Sign Up / Sign In*/
@@ -248,8 +239,8 @@ ul {
   font-weight: bold;
 }
 
-.form-sign-up, .container-triangle {
-  /* display: none; */
+.form-sign-up-desktop, .container-triangle {
+  display: none;
 }
 
 .descript-text{
@@ -277,6 +268,16 @@ ul {
   width: 50%;
   opacity: 0.2;
   fill: #EDD432;
+}
+
+.other-profile-avatar{
+  font-size: 4rem; 
+  color: #76BED0;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
 }
 
 
@@ -357,16 +358,18 @@ ul {
   .container-profile * {
     flex-basis: 40%;
   }
-}
 
+  .justify-content-between {
+    align-self: center;
+  }
 
-.other-profile-avatar{
-  font-size: 4rem;
-  color: #76BED0;
-}
+  .align-items-baseline {
+    align-self: flex-end;
+  }
 
-
-.input-group {
-  display: flex;
-  flex-direction: column;
+  .post-area {
+    width: 68.4rem;
+    height: 12rem;
+    
+  }
 }
