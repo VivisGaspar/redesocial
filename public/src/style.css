@@ -1,5 +1,6 @@
 body {
   font-family: "Segoe UI","Helvetica Neue","Noto Sans","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  margin: 0px;
 }  
 
 li {
@@ -52,7 +53,7 @@ ul {
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
-  height: 90vh;
+  height: 100vh;
   background: url(assets/img/home-bg.jpg) no-repeat center center;
   background-size: contain;
   background-attachment: fixed;
