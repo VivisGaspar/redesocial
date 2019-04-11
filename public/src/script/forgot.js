@@ -1,3 +1,7 @@
+$(document).ready(function () {
+    $('#btn-forgot').click(getForgot);
+});
+
 const database = firebase.database();
 
 const actionCodeSettings = {
@@ -21,8 +25,3 @@ function getForgot(event) {
     const email = $('#email').val();
     setForgot(email);
 }
-
-$(document).ready(function () {
-    $('#btn-forgot').click(getForgot);
-});
-

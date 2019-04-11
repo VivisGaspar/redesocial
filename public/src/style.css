@@ -277,6 +277,7 @@ background-color: #76BED0;
     display: flex;
     background-position: unset;
     align-items: center;
+    height: 100vh;
   }
 
   .home {
