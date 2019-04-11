@@ -2,7 +2,7 @@
 # EducaLab
 
 #### Rede Social Educacional
-
+Acesse o site: [EducaLab](https://educalab-52ee0.firebaseapp.com/).
   
 
 #### Índice
