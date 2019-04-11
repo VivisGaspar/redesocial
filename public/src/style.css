@@ -55,7 +55,7 @@ background-color: #76BED0;
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
-  height: 90vh;
+  height: 100vh;
   background: url(assets/img/home-bg.jpg) no-repeat center center;
   background-size: contain;
   background-attachment: fixed;
@@ -277,6 +277,7 @@ background-color: #76BED0;
     display: flex;
     background-position: unset;
     align-items: center;
+    height: 90vh;
   }
 
   .home {
