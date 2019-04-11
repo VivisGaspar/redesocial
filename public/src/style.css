@@ -53,7 +53,7 @@ ul {
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
-  height: 100vh;
+  height: 90vh;
   background: url(assets/img/home-bg.jpg) no-repeat center center;
   background-size: contain;
   background-attachment: fixed;
@@ -85,7 +85,7 @@ ul {
   margin: 5px;
 }
 
-.justify-content-end {
+.nav-home {
   background-color: #76BED0;
 }
 
@@ -296,6 +296,7 @@ ul {
     display: flex;
     background-position: unset;
     align-items: center;
+    height: 100vh;
   }
 
   .home {
