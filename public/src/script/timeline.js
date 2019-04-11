@@ -3,10 +3,7 @@ $(document).ready(function () {
     
 });
 
-
 let USER_ID = window.location.search.match(/(?<=userId=)(.*)(?=&)/)[1];
-
-console.log(USER_ID);
 
 function addPostsToDB(postInput, privacy) {
     return database.ref('posts/' + USER_ID).push({ 
@@ -69,7 +66,6 @@ function infoUser(snapshot) {
         let user = childSnapshot.val();
         let userArray = [user.name + " " + user.lastName];
         if (USER_ID === childSnapshot.key){
-            console.log(userArray)
             $('.full-name-post').text(userArray)
         }
       });
