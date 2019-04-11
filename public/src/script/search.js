@@ -25,15 +25,12 @@ function searchUsers(snapshot) {
         let userArray = [];
         for (userInfo of searchArray) {
             if (usersArray.indexOf(userInfo) >= 0) {
-                console.log('oi');
-                console.log(searchArray);
                 userArray = usersArray;
             }
         }
         if (userArray.length > 0) {
             printUsers(userArray);
         }
-
     });
 }
 

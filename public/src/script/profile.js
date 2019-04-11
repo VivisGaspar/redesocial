@@ -6,24 +6,19 @@ function getInfoEditProfile(nameEdit, lastNameEdit, turma) {
         <p>Sobrenome: ${lastNameEdit}</p>
     <p>Turma: ${turma}</p>
         <p>Turma: ${turma}</p>`)
-
-
     if (nameEdit) {
         database.ref('users/' + USER_ID).update({
             name: nameEdit
         });
     }
-
     if (lastNameEdit) {
         database.ref('users/' + USER_ID).update({
             lastName: lastNameEdit
         });
     }
-
     if (turma) {
         database.ref('users/' + USER_ID).update({
             turma: turma
         });
     }
-
 }

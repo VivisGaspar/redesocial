@@ -8,56 +8,39 @@ $(document).ready(function () {
     $('#home-btn-return').click(returnHome);
     $('.btn-go-profile').click(goProfile);
     $('#btn-edit-profile').click(getInfoEdit);
-    // $('.dropdown-toggle').dropdown();
     $('.btn-logout').click(goHome);
     $('.btn-go-timeline').click(goTimeline);
-    
-    //recebe o email salvo no localStorage
     const email = localStorage.getItem('emailForSignIn');
-    
-    //verfica sempre que entrar no HTML de signIn se é uma url do email
     if (email && location.search && location.search.split('oobCode=')[1]) {
-
-        //insere o email salvo no localStorage no campo de email 
         $('#email-sign-in').val(email);
-        
-        //separa o código enviado via queryString (valor do oobCode) que está na url
         const code = location.search.split('&').map(query => {
             if (query.split('=')[0] === 'oobCode') {
                 return query.split('=')[1];
             }
         }).join('');
-
-        //cria uma nova senha dinâmica de 6 digitos
         const newPassword = `${Math.floor(Math.random() * 999999) + 1}`;
-        
-        //adiciona a nova senha criada dinamicamente para o email salvo
         firebase.auth().confirmPasswordReset(code, newPassword)
-        .then(function() {
-            alert(`Sua nova senha é: ${newPassword}`);
-        })
-        .catch(function(error) {
-            console.error(error);
-        });
-        
+            .then(function () {
+                alert(`Sua nova senha é: ${newPassword}`);
+            })
+            .catch(function (error) {
+                console.error(error);
+            });
     }
 });
 
 function goSignIn(event) {
-    event.preventDefault()
-    // window.location = 'signIn.html'
+    event.preventDefault();
     window.location.replace('signIn.html')
 }
 
 function goSignUp(event) {
-    event.preventDefault()
-    // window.location = 'signUp.html'
+    event.preventDefault();
     window.location.replace('signUp.html')
 }
 
 function returnHome(event) {
-    event.preventDefault()
-    // window.location = 'index.html'
+    event.preventDefault();
     window.location.replace('index.html')
 }
 
@@ -65,8 +48,8 @@ function goProfile() {
     window.location = 'profile.html?userId=' + USER_ID + '&profile'
 }
 
-function getInfoEdit(e) {
-    e.preventDefault()
+function getInfoEdit(event) {
+    event.preventDefault();
     let nameEdit = $('#name-profile').val()
     let lastNameEdit = $('#last-name-profile').val()
     let turma = $('#turma').val()
@@ -74,7 +57,7 @@ function getInfoEdit(e) {
 }
 
 function getSignUpInfo(event) {
-    event.preventDefault()
+    event.preventDefault();
     const email = $('#email').val();
     const password = $('#password').val();
     const name = $('#name').val();
@@ -96,16 +79,12 @@ function getPostInput(event) {
     if (postInput) {
         let newPost = addPostsToDB(postInput, privacyInput);
         let postId = newPost.getKey();
-        console.log(postId);
         printPosts(postInput, 0, privacyInput, postId);
     } else {
         alert("complete");
     }
     $("#post-input").val("");
 }
-
-
-
 
 function printPosts(text, like, privacy, key) {
     let likes = "";
@@ -145,22 +124,13 @@ function printPosts(text, like, privacy, key) {
     </div>           
     </div>`
     );
-    
-    // <div class="dots">
-    //                     <div class="dot"></div>
-    //                     <div class="dot"></div>
-    //                     <div class="dot"></div>
-    //                 </div>
-    
     if (like > 0) {
         $(`#heart-${key}`).removeClass('far').addClass('fas fas-like');
     };
-    
     getChangeOp(text, key);
     likePost(likes, key);
     getInfoFromDB();
 }
-
 
 function getChangeOp(text, key) {
     $(`#options-${key}`).hide()
@@ -168,13 +138,11 @@ function getChangeOp(text, key) {
         $(`#options-${key}`).toggle("display")
     });
     $(`#edit-${key}`).click(function () {
-        console.log(key);
         let newText = prompt(`Altere sua publicação: ${text}`);
         let postP = $(`#text-${key}`);
         editPost(postP, newText, key);
     });
     $(`#del-${key}`).click(function () {
-        console.log(key);
         if (window.confirm("Excluir publicação?")) {
             let postContainer = $(`#post-container-${key}`);
             deletePost(postContainer, key);
@@ -226,12 +194,10 @@ function printUsers(userArray) {
     </li>
     `
     );
-    // let userId = window.location.search.match(/\?<=userId=(.*)(?=&)/);
     goOtherProfile(otherUserKey);
 }
 
 function goOtherProfile(otherUserKey) {
-    console.log(otherUserKey);
     $(`#profile-${otherUserKey}`).click(function () {
         window.location = 'otherprofile.html?userId=' + USER_ID + '&profile=' + otherUserKey;
     })
@@ -239,7 +205,7 @@ function goOtherProfile(otherUserKey) {
 
 function printOtherUserInfo(username, name, lastName, turma) {
     let userClass = " ";
-    if(turma) {
+    if (turma) {
         userClass = turma;
     }
     $('#profile-info').append(`
@@ -249,7 +215,6 @@ function printOtherUserInfo(username, name, lastName, turma) {
     <h6 class='m-3 text-secondary'><i class="fas fa-graduation-cap"></i> turma: ${userClass}</h6>
     `
     );
-    
 }
 
 function printOtherUserPosts(text, like, privacy, otherUserKey, name, lastName) {
@@ -257,7 +222,7 @@ function printOtherUserPosts(text, like, privacy, otherUserKey, name, lastName) 
     if (like > 0) {
         likes = like;
     }
-    
+
     if (privacy === 'public-post') {
         $("#profile-posts").prepend(`
         <div class="bg-white">
