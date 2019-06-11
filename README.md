@@ -45,7 +45,7 @@ Projeto desenvolvido no bootcamp da Laboratória - Brasil. O projeto consiste em
 
 - Foi utilizada a biblioteca jQuery para manipulação de DOM.
 
-- Foi utilizado o _framework_ Bootstrap v4 para elementos de leiaute e responsividade.
+- Foi utilizado o _framework_ Bootstrap v4 para elementos de layout e responsividade.
 
 - Código escrito seguindo o [guia de estilos da Laboratória](https://github.com/JulianaAmoasei/js-style-guide/blob/pt-translation/README-PT.md).
 
@@ -61,11 +61,13 @@ Projeto desenvolvido no bootcamp da Laboratória - Brasil. O projeto consiste em
 
 - Timeline - Likes (curtir e visualizar quantidade de curtidas)
 
+- Hacker Edition | Perfil (editar e ver)
+
 - Hacker Edition | Amigos (adicionar e deletar)
 
 - Hacker Edition | Publicações (compartilhar e comentar)
 
-- Hacker Edition | Perfil (editar e ver)
+
 
   
 
@@ -73,17 +75,17 @@ Projeto desenvolvido no bootcamp da Laboratória - Brasil. O projeto consiste em
 
   
 
-O tema foi escolhido a partir do entendimento que o contexto educacional poderia se beneficiar de uma plataforma que contribua para a otimização das relações entre professor e alunos na busca por um aprendizado mais dinâmico e condizente com o nível de exigência tecnológica dos alunos e da sociedade.
+O tema foi escolhido a partir do entendimento que o contexto educacional pode se beneficiar de uma plataforma que contribua para a otimização das relações entre professor e alunos na busca por um aprendizado mais dinâmico e condizente com o nível de exigência tecnológica dos alunos e da sociedade.
 
   
 
 ##### Mercado
 
-Foram levantadas as iniciativas existentes, de forma a descobrir demandas ainda não atendidas. Alguns dos sites (brasileiros e estrangeiros) focados em educação foram: Edmodo, Schoology, Teamie e Passei Direto.
+Foram levantadas as iniciativas já existentes, de forma a descobrir demandas ainda não atendidas. Alguns dos sites (brasileiros e estrangeiros) encontrados cujo foco é o da educação foram: Edmodo, Schoology, Teamie e Passei Direto.
 
   
 
-Algumas opções encontradas estabelecem relação com as escola e oferecem ferramentas de gestão de salas de aula, comunicação entre professor e aluno a qualquer momento e funcionalidades para avaliação dos alunos. Outras, focam no compartilhamento de conteúdos entre estudantes de quaisquer níveis e instituições e as dúvidas e discussões são organizadas por áreas de conhecimento.
+Algumas dessas opções estabelecem relações com as escolas e oferecem ferramentas de gestão de salas de aula, comunicação entre professor e aluno a qualquer momento e funcionalidades para avaliação dos alunos. Outras, focam no compartilhamento de conteúdos entre estudantes de quaisquer níveis e instituições e as dúvidas e discussões são organizadas por áreas de conhecimento.
 
   
 
@@ -149,7 +151,7 @@ O primeiro protótipo foi testado com potenciais usuários (professores e alunos
 
 #### Cenário do aluno:
 
-Você é um aluno(a) de ensino médio não pôde ir na aula no dia anterior, porém entrou em contato um amigo(a) de sala que lhe informou que o professor irá utilizar uma rede social para ajudar nos estudos.
+Você é um aluno(a) de ensino médio e não pôde ir na aula no dia anterior, porém entrou em contato um amigo(a) de sala que lhe informou que o professor irá utilizar uma rede social para ajudar nos estudos.
 
 Como não estava presente tentará sozinho(a) realizar algumas tarefas através do link que seu amigo(a) enviou.
 
@@ -309,7 +311,7 @@ Os arquivos HTML foram criados de acordo com cada uma das páginas (index/home, 
 
 - CSS
 
-A aplicação de estilo foi feita majoritariamente utilizando biblioteca Bootstrap (versão 4.3.1) com pequenas customizações via arquivo CSS. A rede social foi desenvolvida a partir do protótipo, considerando mobile first para depois aplicar media queries para adaptações pontuais para dispositivos maiores e desktop.
+A aplicação de estilo foi feita majoritariamente utilizando biblioteca Bootstrap (versão 4.3.1) com pequenas customizações via arquivo CSS. A rede social foi desenvolvida a partir do protótipo, considerando mobile first e posterior aplicação de media queries para adaptações pontuais em dispositivos maiores como desktop.
 
 - JavaScript
 
