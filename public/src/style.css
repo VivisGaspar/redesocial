@@ -1,6 +1,6 @@
 body {
   font-family: "Segoe UI","Helvetica Neue","Noto Sans","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"
-}  
+}
 
 li {
   list-style-type:none;
@@ -8,7 +8,7 @@ li {
 
 li:hover {
   color:#fff;
-  cursor:pointer;  
+  cursor:pointer;
 }
 
 ul {
@@ -20,7 +20,7 @@ li:hover,
 .dots:hover .dot,
 .form-btn,
 .bg-navbar  {
-background-color: #76BED0;
+  background-color: #76BED0;
 }
 
 .options,
@@ -48,14 +48,14 @@ background-color: #76BED0;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;  
+  align-items: center;
 }
 
 .description-home {
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
-  height: 100vh;
+  height: 90vh;
   background: url(assets/img/home-bg.jpg) no-repeat center center;
   background-size: contain;
   background-attachment: fixed;
@@ -94,7 +94,7 @@ background-color: #76BED0;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  height: 90vh; 
+  height: 90vh;
 }
 
 .full-name-post,
@@ -137,7 +137,7 @@ background-color: #76BED0;
 }
 
 .form-forgot {
-  margin: 20px 0;  
+  margin: 20px 0;
 }
 
 .form-forgot-link {
@@ -182,6 +182,10 @@ background-color: #76BED0;
   margin: 1.5rem 0.8rem;
 }
 
+.form-post {
+  width: 90%;
+}
+
 .privacy-post-select,
 .post-area {
   font-weight: bold;
@@ -189,7 +193,7 @@ background-color: #76BED0;
 }
 
 .post-area {
-  width: 17.4rem;
+  width: 100%;
   height: 8rem;
   border: transparent;
 }
@@ -253,7 +257,7 @@ background-color: #76BED0;
   fill: #EDD432;
 }
 
-.other-profile-avatar{
+.other-profile-avatar {
   font-size: 4rem;
   color: #76BED0;
 }
@@ -261,6 +265,39 @@ background-color: #76BED0;
 .input-group {
   display: flex;
   flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .description-home {
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .timeline-logo {
+    width: 10%;
+  }
+
+  .input-search-div {
+    margin: 1rem 2rem;
+  }
+
+  .create-post-area {
+    margin: 1.5rem 2.5rem;
+  }
+
+  .create-post-avatar {
+    font-size: 3rem;
+    margin-left: 0.2rem;
+  }
+
+  .btn-privacy-filter {
+    margin-right: 2.5rem;
+  }
+
+  .post-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
 
 @media (min-width: 1280px) {
@@ -296,9 +333,8 @@ background-color: #76BED0;
 
   .form-sign-up-desktop {
     background: rgba(0,0,0,0.1);
-    margin: 10%;
+    margin: 0 10%;
     border: none;
-    height: 79vh;
     padding: 1em;
   }
 
@@ -307,7 +343,7 @@ background-color: #76BED0;
     font-weight: 100;
     font-size: 1em;
   }
-  
+
   #left {
     float: left;
     height: 500px;
@@ -333,9 +369,9 @@ background-color: #76BED0;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    align-items: center;    
+    align-items: center;
   }
-  
+
   .container-profile * {
     flex-basis: 40%;
   }
@@ -350,6 +386,6 @@ background-color: #76BED0;
 
   .post-area {
     width: 68.4rem;
-    height: 12rem;    
+    height: 12rem;
   }
 }

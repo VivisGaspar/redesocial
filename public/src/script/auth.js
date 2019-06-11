@@ -1,5 +1,3 @@
-const database = firebase.database();
-
 function signUp(email, password, name, lastName) {
   firebase.auth().createUserWithEmailAndPassword(email, password)
     .then(function (response) {
@@ -14,8 +12,6 @@ function signUp(email, password, name, lastName) {
       });
       console.log(response)
       window.location.replace('timeline.html?userId=' + userId + '&timeline')
-      // window.location = 'timeline.html?userId=' + userId + '&timeline';
-
     })
     .catch(function (error) {
       var errorCode = error.code;
@@ -44,9 +40,7 @@ function signIn(emailSignIn, passwordSignIn) {
         alert(errorMessage);
       }
       console.log(errorCode, errorMessage);
-
     });
-
 }
 
 
