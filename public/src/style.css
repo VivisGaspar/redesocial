@@ -55,7 +55,7 @@ li:hover,
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
-  height: 100vh;
+  height: 90vh;
   background: url(assets/img/home-bg.jpg) no-repeat center center;
   background-size: contain;
   background-attachment: fixed;
@@ -182,6 +182,10 @@ li:hover,
   margin: 1.5rem 0.8rem;
 }
 
+.form-post {
+  width: 90%;
+}
+
 .privacy-post-select,
 .post-area {
   font-weight: bold;
@@ -189,7 +193,7 @@ li:hover,
 }
 
 .post-area {
-  width: 17.4rem;
+  width: 100%;
   height: 8rem;
   border: transparent;
 }
@@ -263,6 +267,39 @@ li:hover,
   flex-direction: column;
 }
 
+@media (min-width: 768px) {
+  .description-home {
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .timeline-logo {
+    width: 10%;
+  }
+
+  .input-search-div {
+    margin: 1rem 2rem;
+  }
+
+  .create-post-area {
+    margin: 1.5rem 2.5rem;
+  }
+
+  .create-post-avatar {
+    font-size: 3rem;
+    margin-left: 0.2rem;
+  }
+
+  .btn-privacy-filter {
+    margin-right: 2.5rem;
+  }
+
+  .post-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
 @media (min-width: 1280px) {
   .timeline-logo {
     width: 5%;
@@ -296,9 +333,8 @@ li:hover,
 
   .form-sign-up-desktop {
     background: rgba(0,0,0,0.1);
-    margin: 10%;
+    margin: 0 10%;
     border: none;
-    height: 79vh;
     padding: 1em;
   }
 

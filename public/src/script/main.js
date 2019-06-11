@@ -87,7 +87,7 @@ function printPosts(text, like, privacy, key) {
     filter = "private"
   }
   $("#post-list").prepend(`
-    <div class="${filter} bg-white" id='post-container-${key}'>
+    <div class="${filter} bg-white post-container" id='post-container-${key}'>
       <div class="d-flex justify-content-end align-items-baseline">
         <p class="post-timeline-margin">${printPrivacy}</p>
         <div id='div-${key}' class="wrap-menu">
@@ -212,7 +212,7 @@ function printOtherUserPosts(text, like, privacy, otherUserKey, name, lastName) 
 
   if (privacy === 'public-post') {
     $("#profile-posts").prepend(`
-      <div class="bg-white">
+      <div class="bg-white post-container">
         <div class="d-flex justify-content-start">
           <i class="fas fa-user-circle create-post-avatar mt-2"></i>
           <p class="full-name-post mt-2"> ${name} ${lastName}</p>
