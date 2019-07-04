@@ -277,9 +277,13 @@ Com essas funcionalidades pretende-se incentivar a responsabilidade e senso de o
 Versões propostas - status atual: versão 0.0.2
 
 0.0.1 - Permite criação de conta (sign up), início de sessão (sign in), visualizar a interagir a/com timeline a nível de publicações (criar, apagar, editar, filtrar público/privado).
+
 0.02 - Permite interagir na timeline com likes (curtir e visualizar quantidade de curtidas) e no perfil (editar suas informações e buscar e visualizar perfil de outros).
+
 0.0.3 - Permite adicionar e deletar amigos, compartilhar e comentar publicações (suas e de outras) e incluir mais informações no perfil
+
 0.0.4 - Permite navegação em ambiente específico para cada sala/turma e moderação do professor.
+
 0.0.5 - Possibilidade de realizar testes/avaliações e demandar tarefas na aplicação. Organização de agenda (da sala e de cada aluno) e habilitar notificações.
 
   
