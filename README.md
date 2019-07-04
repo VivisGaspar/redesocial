@@ -292,9 +292,13 @@ Versões propostas - status atual: versão 0.0.2
 As histórias dos usuários foram desenvolvidas a partir das cinco épicas iniciais descritas abaixo, lembrando que nem todas as histórias foram abordadas na versão atual da aplicação.
 
 ÉPICA I - “Como aluno(a) gostaria de me cadastrar ou logar na plataforma para acessar as funcionalidades.”
+
 ÉPICA II - “Como aluno(a) gostaria de me cadastrar na plataforma para utilizar funcionalidades.”
+
 ÉPICA III - “Como professor(a), quero criar um ambiente online onde os alunos interajam em formato de fórum deixando registradas suas opiniões, quero moderar este debate de forma saudável”
+
 ÉPICA IV - "Como aluno(a) gostaria de ter um perfil completo com as minhas informações e foto"
+
 ÉPICA  V - "Como aluno(a) gostaria de me conectar com outros colegas e interagir com suas publicações."
   
 #### Testes HTML
