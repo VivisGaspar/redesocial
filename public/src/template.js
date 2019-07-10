@@ -32,7 +32,7 @@ function returnHome(event) {
 }
 
 function goProfile() {
-  window.location = 'profile.html?userId=' + USER_ID + '&profile'
+  window.location = 'myprofile.html?userId=' + USER_ID + '&profile'
 }
 
 function getInfoEdit(event) {
