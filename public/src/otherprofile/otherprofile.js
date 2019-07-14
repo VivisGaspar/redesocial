@@ -10,7 +10,7 @@ function searchOtherUser(snapshot) {
     let user = childSnapshot.val();
     let otherUserKey = window.location.search.match(/\&profile=(.+)/)[1];
     if (otherUserKey === childSnapshot.key) {
-      printOtherUserInfo(user.username, user.name, user.lastName, user.turma);
+      printOtherUserInfo(user.username, user.name, user.lastName, user.userClass);
       getOtherUsersPostsFromDB(childSnapshot.key, user.name, user.lastName);
     };
   });

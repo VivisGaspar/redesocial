@@ -3,7 +3,7 @@ body {
 }
 
 .form-btn,
-.bg-navbar  {
+.bg-navbar {
   background-color: #76BED0;
 }
 
@@ -39,7 +39,7 @@ body {
 .form-title,
 .form-label,
 .form-btn,
-.form-or  {
+.form-or {
   font-weight: bold;
 }
 

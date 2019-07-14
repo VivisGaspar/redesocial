@@ -37,10 +37,19 @@ function goProfile() {
 
 function getInfoEdit(event) {
   event.preventDefault();
-  let nameEdit = $('#name-profile').val()
-  let lastNameEdit = $('#last-name-profile').val()
-  let turma = $('#turma').val()
-  getInfoEditProfile(nameEdit, lastNameEdit, turma)
+  let nameEdit = $('#name-profile').val();
+  let lastNameEdit = $('#last-name-profile').val();
+  let userClass = $('#user-class').val()
+  printNewInfoUser(nameEdit, lastNameEdit, userClass);
+}
+
+function printNewInfoUser(nameEdit, lastNameEdit, userClass) {
+  $("#new-profile").html(`
+    <h3>Dados alterados com sucesso:</h3>
+    <p>Nome: ${nameEdit}</p>
+    <p>Sobrenome: ${lastNameEdit}</p>
+    <p>Turma: ${userClass}</p>`)
+  getInfoEditProfile(nameEdit, lastNameEdit, userClass);
 }
 
 function getSignUpInfo(event) {
@@ -190,16 +199,12 @@ function goOtherProfile(otherUserKey) {
   })
 }
 
-function printOtherUserInfo(username, name, lastName, turma) {
-  let userClass = " ";
-  if (turma) {
-    userClass = turma;
-  }
+function printOtherUserInfo(username, name, lastName, userClass) {
   $('#profile-info').append(`
     <i class="fas fa-user-circle other-profile-avatar m-3"></i>
     <h2 class='mb-0 text-secondary'>${name} ${lastName}</h2>
     <h6 class='text-info'>@${username}</h6>
-    <h6 class='m-3 text-secondary'><i class="fas fa-graduation-cap"></i> turma: ${userClass}</h6>
+    <h6 class='m-3 text-secondary'><i class="fas fa-graduation-cap"></i> turma: ${userClass ? userClass : 0}</h6>
     `
   );
 }
@@ -209,7 +214,6 @@ function printOtherUserPosts(text, like, privacy, otherUserKey, name, lastName) 
   if (like > 0) {
     likes = like;
   }
-
   if (privacy === 'public-post') {
     $("#profile-posts").prepend(`
       <div class="bg-white post-container">
