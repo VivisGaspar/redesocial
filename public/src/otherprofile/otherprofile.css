@@ -1,0 +1,95 @@
+body {
+  font-family: "Segoe UI","Helvetica Neue","Noto Sans","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"
+}
+
+.full-name-post,
+.form-title,
+.form-label,
+.form-btn,
+.form-or  {
+  font-weight: bold;
+}
+
+.bg-navbar-yellow {
+  background-color: #FDE845;
+}
+
+.bg-timeline-blue {
+  background-color: #CAE9ED;
+  padding-top: 0.5rem;
+}
+
+.timeline-logo {
+  width: 23%;
+}
+
+.post-timeline-text,
+.profile-avatar,
+.privacy-post-select,
+.post-area,
+.fa-ellipsis-v,
+.full-name-post {
+  color: grey;
+}
+
+.profile-avatar {
+  font-size: 3rem;
+  margin-right: 0.7rem;
+}
+
+.create-post-avatar {
+  font-size: 2rem;
+  color: lightgrey;
+  margin-right: 0.5rem;
+}
+
+.post-timeline-margin {
+  margin: 0.5rem;
+}
+
+.like-count,
+.far,
+.fas-like {
+  color: #FDE845;
+  font-weight: bold;
+}
+
+.other-profile-avatar {
+  font-size: 4rem;
+  color: #76BED0;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .timeline-logo {
+    width: 10%;
+  }
+
+  .input-search-div {
+    margin: 1rem 2rem;
+  }
+
+  .create-post-avatar {
+    font-size: 3rem;
+    margin-left: 0.2rem;
+  }
+
+  .post-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .timeline-logo {
+    width: 5%;
+  }
+  
+  .align-items-baseline {
+    align-self: flex-end;
+  }
+}

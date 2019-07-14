@@ -1,0 +1,146 @@
+body {
+  font-family: "Segoe UI","Helvetica Neue","Noto Sans","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"
+}
+
+.form-btn,
+.bg-navbar {
+  background-color: #76BED0;
+}
+
+.description-home {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  height: 90vh;
+  background: url(assets/img/home-bg.jpg) no-repeat center center;
+  background-size: contain;
+  background-attachment: fixed;
+  font-size: 25px;
+  background-position: left;
+  background-size: cover;
+}
+
+.box {
+  flex-basis: 65%;
+  padding:20px;
+}
+
+.logo {
+  max-width:230px;
+  max-height:95px;
+  width: auto;
+  height: auto;
+}
+
+.btn-secondary {
+  margin: 5px;
+}
+
+.form-title,
+.form-label,
+.form-btn,
+.form-or {
+  font-weight: bold;
+}
+
+.form-title {
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
+  color: #1F2D3D;
+  margin: 30px 0;
+  text-align: center;
+}
+
+.form-label {
+  color: #47525E;
+  margin-bottom: 0;
+}
+
+.form-btn {
+  padding: 5px 25px;
+  color: #343F4B;
+  border: 0;
+}
+
+.form-or {
+  position: relative;
+  margin: 20px 0 20px 0;
+  font-family: Lato, sans-serif;
+  font-size: 13px;
+  color: #47525E;
+}
+
+.form-sign-up-desktop, .container-triangle {
+  display: none;
+}
+
+.description-text {
+  font-family: 'Advent Pro';
+  text-align: inherit;
+  hyphens: auto;
+  color: rgb(252, 238, 160);
+}
+
+@media (min-width: 768px) {
+  .description-home {
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
+
+@media (min-width: 1280px) {
+  .description-home {
+    display: flex;
+    background-position: unset;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .description-text {
+    text-align: justify;
+  }
+
+  .logo {
+    max-height: 100%;
+  }
+
+  .form-sign-up-desktop {
+    background: rgba(0,0,0,0.1);
+    margin: 0 10%;
+    border: none;
+    padding: 1em;
+  }
+
+  .form-label, .form-title {
+    color: #FFFF;
+    font-weight: 100;
+    font-size: 1em;
+  }
+
+  #left {
+    float: left;
+    height: 500px;
+    width: 342px;
+    shape-outside: polygon(0.33% 3px, 100.23% 0.17%, 2px 99.73%);
+  }
+
+  .container-triangle {
+    width: 15em;
+    padding-right: 4em;
+    margin-top: -8em;
+  }
+
+  .responsive-hide {
+    display: none;
+  }
+
+  .resonsive-show {
+    display: block;
+  }
+}

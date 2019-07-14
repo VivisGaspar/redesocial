@@ -1,0 +1,67 @@
+body {
+  font-family: "Segoe UI","Helvetica Neue","Noto Sans","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"
+}
+
+li {
+  list-style-type:none;
+}
+
+li:hover {
+  color:#fff;
+  cursor:pointer;
+}
+
+ul {
+  display:flex;
+  flex-direction:column;
+}
+
+li:hover,
+.dots:hover .dot,
+.form-btn,
+.bg-navbar {
+  background-color: #76BED0;
+}
+
+.bg-navbar-yellow {
+  background-color: #FDE845;
+}
+
+.timeline-logo {
+  width: 23%;
+}
+
+.post-timeline-text,
+.profile-avatar,
+.privacy-post-select,
+.post-area,
+.fa-ellipsis-v,
+.full-name-post {
+  color: grey;
+}
+
+.profile-avatar {
+  font-size: 3rem;
+  margin-right: 0.7rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .timeline-logo {
+    width: 10%;
+  }
+
+  .input-search-div {
+    margin: 1rem 2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .timeline-logo {
+    width: 5%;
+  }
+}

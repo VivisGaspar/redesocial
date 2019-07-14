@@ -1,0 +1,64 @@
+body {
+  font-family: "Segoe UI","Helvetica Neue","Noto Sans","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"
+}
+
+li:hover,
+.dots:hover .dot,
+.form-btn,
+.bg-navbar {
+  background-color: #76BED0;
+}
+
+.options,
+.form-sign-up,
+.form-sign-in {
+  border-width: 1px;
+  border-style: solid;
+  border-color:#C0CCDA;
+  border-radius:2px;
+  margin: 0px;
+  width: 25%;
+  background-color:#FFFFFF;
+}
+
+.btn-secondary {
+  margin: 5px;
+}
+
+.form-sign-up, .form-sign-in {
+  width: 100%;
+  padding: 5px;
+  background-color: #EFB600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 90vh;
+}
+
+.full-name-post,
+.form-title,
+.form-label,
+.form-btn,
+.form-or {
+  font-weight: bold;
+}
+
+.form-title {
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
+  color: #1F2D3D;
+  margin: 30px 0;
+  text-align: center;
+}
+
+.form-label {
+  color: #47525E;
+  margin-bottom: 0;
+}
+
+.form-btn {
+  padding: 5px 25px;
+  color: #343F4B;
+  border: 0;
+}

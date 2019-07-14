@@ -1,0 +1,198 @@
+body {
+  font-family: "Segoe UI","Helvetica Neue","Noto Sans","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"
+}
+
+ li {
+  list-style-type:none;
+}
+
+li:hover {
+  color:#fff;
+  cursor:pointer;
+}
+
+ul {
+  display:flex;
+  flex-direction:column;
+}
+
+li:hover,
+.dots:hover .dot,
+.form-btn,
+.bg-navbar {
+  background-color: #76BED0;
+}
+
+.options,
+.form-sign-up,
+.form-sign-in {
+  border-width: 1px;
+  border-style: solid;
+  border-color:#C0CCDA;
+  border-radius:2px;
+  margin: 0px;
+  width: 25%;
+  background-color:#FFFFFF;
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  margin: 3px;
+  background: #C0CCDA;
+  border-radius: 50%;
+  display: block;
+}
+
+.wrap-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.full-name-post,
+.form-title,
+.form-label,
+.form-btn,
+.form-or {
+  font-weight: bold;
+}
+
+.bg-navbar-yellow {
+  background-color: #FDE845;
+}
+
+.bg-timeline-blue {
+  background-color: #CAE9ED;
+  padding-top: 0.5rem;
+}
+
+.timeline-logo {
+  width: 23%;
+}
+
+.post-timeline-text,
+.profile-avatar,
+.privacy-post-select,
+.post-area,
+.fa-ellipsis-v,
+.full-name-post {
+  color: grey;
+}
+
+.profile-avatar {
+  font-size: 3rem;
+  margin-right: 0.7rem;
+}
+
+.create-post-avatar {
+  font-size: 2rem;
+  color: lightgrey;
+  margin-right: 0.5rem;
+}
+
+.create-post-area {
+  margin: 1.5rem 0.8rem;
+}
+
+.form-post {
+  width: 90%;
+}
+
+.privacy-post-select,
+.post-area {
+  font-weight: bold;
+  background-color: lightgrey;
+}
+
+.post-area {
+  width: 100%;
+  height: 8rem;
+  border: transparent;
+}
+
+.privacy-post-select {
+  font-size: 0.8rem;
+  height: 1.2rem;
+}
+
+.view-filter-p {
+  margin: 0.8rem;
+}
+
+.btn-privacy-filter {
+  margin: 0.8rem;
+}
+
+.post-timeline-margin {
+  margin: 0.5rem;
+}
+
+.fa-ellipsis-v {
+  font-size: 1.5rem;
+}
+
+.like-count,
+.far,
+.fas-like {
+  color: #FDE845;
+  font-weight: bold;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .timeline-logo {
+    width: 10%;
+  }
+
+  .input-search-div {
+    margin: 1rem 2rem;
+  }
+
+  .create-post-area {
+    margin: 1.5rem 2.5rem;
+  }
+
+  .create-post-avatar {
+    font-size: 3rem;
+    margin-left: 0.2rem;
+  }
+
+  .btn-privacy-filter {
+    margin-right: 2.5rem;
+  }
+
+  .post-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .timeline-logo {
+    width: 5%;
+  }
+
+  .create-post-area {
+    display: flex;
+    justify-content: center;
+  }
+
+  .justify-content-between {
+    align-self: center;
+  }
+
+  .align-items-baseline {
+    align-self: flex-end;
+  }
+
+  .post-area {
+    width: 68.4rem;
+    height: 12rem;
+  }
+}
