@@ -1,79 +1,102 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>EducaLab</title>
+    <link href="https://fonts.googleapis.com/css?family=Advent+Pro" rel="stylesheet" />
+    <link rel="icon" href="src/assets/img/logo-educa.png" type="image/png" sizes="16x16" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/index.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>EducaLab</title>
-  <link href="https://fonts.googleapis.com/css?family=Advent+Pro" rel="stylesheet">
-  <link rel="icon" href="src/assets/img/logo-educa.png" type="image/png" sizes="16x16">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="src/index.css" />
-</head>
-
-<body>
-  <nav class="navbar justify-content-end bg-navbar">
-    <form class="form-inline">
-      <button id="home-btn-sign-in" type="button" class="btn btn-secondary">LOGIN</button>
-      <button id="home-btn-sign-up" type="button" class="btn btn-secondary responsive-hide">CADASTRAR</button>
-    </form>
-  </nav>
-  <div class="description-home">
-    <div class="description-home box">
-      <section class="home">
-        <img class="logo" src="src/assets/img/logo-educa.png" alt="logo Educalab">
-        <div class="container-triangle resonsive-show">
-          <div id="left"></div>
-          <div id="right"></div>
-          <h1 class="description-text">Educão em Rede</h1>
-          <p class="description-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit amet consectetur,
-            adipisicing eli</p>
-        </div>
-        <h3 class="responsive-hide description-text">Educaçao em Rede</h3>
-        <p class="h5 font-weight-light responsive-hide description-text">Lorem ipsum dolor, sit amet consectetur
-          adipisicing elit.</p>
-      </section>
-      <form class="form-sign-up-desktop resonsive-show">
-        <h1 class="form-title">CADASTRE-SE</h1>
-        <div class="form-group">
-          <label class="form-label" for="name">Nome</label>
-          <input type="text" class="form-control" id="name" name="name" placeholder="Digite seu nome" required />
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="last-name">Sobrenome</label>
-          <input type="text" class="form-control" id="last-name" name="last-name" placeholder="Digite seu sobrenome"
-            required />
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="email">E-mail</label>
-          <input type="email" class="form-control" id="email" name="email" placeholder="Digite seu e-mail" required />
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="password">Senha</label>
-          <input type="password" class="form-control" id="password" name="password" placeholder="Digite sua senha"
-            required />
-        </div>
-        <button class="btn btn-primary form-btn" id="btn-sign-up">Cadastrar</button>
+  <body>
+    <nav class="navbar justify-content-end bg-navbar">
+      <form class="form-inline">
+        <button id="home-btn-sign-in" type="button" class="btn btn-secondary">LOGIN</button>
+        <button id="home-btn-sign-up" type="button" class="btn btn-secondary responsive-hide">CADASTRAR</button>
       </form>
+    </nav>
+    <div class="description-home">
+      <div class="description-home box">
+        <section class="home">
+          <img class="logo" src="src/assets/img/logo-educa.png" alt="logo Educalab" />
+          <div class="container-triangle resonsive-show">
+            <div id="left"></div>
+            <div id="right"></div>
+            <h1 class="description-text">Educação em Rede</h1>
+            <p class="description-text">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit amet consectetur, adipisicing eli
+            </p>
+          </div>
+          <h3 class="responsive-hide description-text">Educação em Rede</h3>
+          <p class="h5 font-weight-light responsive-hide description-text">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+          </p>
+        </section>
+        <form class="form-sign-up-desktop resonsive-show">
+          <h1 class="form-title">CADASTRE-SE</h1>
+          <div class="form-group">
+            <label class="form-label" for="name">Nome</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Digite seu nome" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="last-name">Sobrenome</label>
+            <input
+              type="text"
+              class="form-control"
+              id="last-name"
+              name="last-name"
+              placeholder="Digite seu sobrenome"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">E-mail</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Digite seu e-mail" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="password">Senha</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              name="password"
+              placeholder="Digite sua senha"
+              required
+            />
+          </div>
+          <button class="btn btn-primary form-btn" id="btn-sign-up">Cadastrar</button>
+        </form>
+      </div>
     </div>
-  </div>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-database.js"></script>
-  <script src="src/config.js"></script>
-  <script src="src/template.js"></script>
-  <script src="src/signUp/signUp.js"></script>
-  <script src="src/signIn/signIn.js"></script>
-</body>
-
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-database.js"></script>
+    <script src="src/config.js"></script>
+    <script src="src/template.js"></script>
+    <script src="src/signUp/signUp.js"></script>
+    <script src="src/signIn/signIn.js"></script>
+  </body>
 </html>
